@@ -1,0 +1,192 @@
+html {
+  width: 100%;
+  font-size: 16px;
+  background-color: black;
+}
+
+body {
+  width: 100%;
+  height: 100%;
+  background-color: white;
+  display: flex;
+  flex-flow: column nowrap;
+  justify-content: flex-start;
+  align-items: center;
+  overflow-x: hidden;
+  font-family: 'Montserrat', sans-serif;
+}
+
+h1, h2 {
+  text-transform: uppercase;
+  font-size: 1.8em;
+  padding: 0 0.5em;
+}
+
+h1 {
+  font-weight: 600;
+}
+
+h2 {
+  font-weight: 300;
+}
+
+p {
+  letter-spacing: .05em;
+  font-weight: 200;
+  margin: 2em 0;
+  line-height: 1.5;
+}
+
+p b {
+  font-weight: 600;
+}
+
+p i {
+  font-style: italic;
+  font-weight: 600;
+  color: #F09819;
+}
+
+header, body>section, footer {
+  position: relative;
+  width: 100%;
+  padding: 1em;
+  overflow: hidden;
+  display: flex;
+  flex-flow: row nowrap;
+  justify-content: center;
+  align-items: center;
+  overflow-x: hidden;
+}
+
+/*HEADER*/
+
+header {
+  height: 400px;
+  color: white;
+}
+
+header .background {
+  position: absolute;
+  z-index: 0;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
+  background-image: linear-gradient(135deg, #00609B, #103F69 75%);
+  clip-path: polygon( 0 0, 100% 0, 100% 60%, 0 80%);
+}
+
+.content {
+  max-width: 800px;
+  height: 100%;
+  width: 100%;
+  z-index: 1;
+}
+
+header .content {
+  display: flex;
+  flex-flow: row;
+}
+
+header .content>div {
+  flex-grow: 1;
+  width: 50%;
+  display: flex;
+  flex-flow: column;
+}
+
+header .content .left {
+  align-self: flex-start;
+}
+
+header .content .left .MainLOGO {
+  width: 100%;
+  height: auto;
+  padding: 2em 0;
+}
+
+header .content .right {
+  align-self: flex-end;
+  align-items: flex-end;
+  justify-content: flex-end;
+  height: 100%;
+}
+
+header .content .right .illustration {
+  width: 15em;
+  max-width: 100%;
+  height: auto;
+}
+
+/*EMAIL BODY*/
+
+body>section {
+  flex-flow: column;
+  justify-content: space-between;
+  align-items: flex-start;
+  max-width: 800px;
+}
+
+.LondonInfo {
+  min-width: 200px;
+  height: auto;
+}
+
+.tableText {
+  display: flex;
+  flex-flow: row;
+}
+
+button{
+  align-self: center;
+  font-size: 1.2em;
+  padding: 1em 2em;
+  margin: 2em 0;
+  border-radius: 8px;
+  color: white;
+  text-transform: uppercase;
+  background-image: linear-gradient( 45deg, #FF512F, #F09819 );
+  border: none;
+  cursor: pointer;
+}
+
+/*FOOTER*/
+
+footer {
+  width: 100%;
+  max-width: 800px;
+  flex-flow: column;
+  align-items: flex-start;
+}
+
+.footerContent {
+  height: 10px;
+  width: 100%;
+  max-width: 800px;
+  background-image: linear-gradient(90deg, #00609B 0%, #103F69 50%, #FF512F 50%, #F09819 100%);
+  padding: 0;
+}
+
+footer svg {
+  margin: 2em 0;
+}
+
+/*MEDIA QUERIES*/
+
+@media only screen and (max-width: 550px){
+  .tableText{
+    flex-flow: column;
+    align-items: center;
+  }
+  .tableText svg{
+    order: -1;
+    width: 60%;
+  }
+}
+
+@media only screen and (max-width: 750px){
+  header h2{
+    font-size: 1.1em;
+  }
+}

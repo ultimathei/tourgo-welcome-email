@@ -294,6 +294,10 @@ footer .signature>div a:hover svg{
   fill: #FF512F;
 }
 
+.signature svg:hover .circle{
+  stroke: #FF512F;
+}
+
 /*MEDIA QUERIES*/
 
 @media only screen and (max-width: 550px){

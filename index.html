@@ -5,7 +5,423 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>TOURGO Email</title>
-  <link rel="stylesheet" href="style.css">
+
+  <style>
+    /* http://meyerweb.com/eric/tools/css/reset/ 
+      v2.0 | 20110126
+      License: none (public domain)
+    */
+    html,
+    body,
+    div,
+    span,
+    applet,
+    object,
+    iframe,
+    h1,
+    h2,
+    h3,
+    h4,
+    h5,
+    h6,
+    p,
+    blockquote,
+    pre,
+    a,
+    abbr,
+    acronym,
+    address,
+    big,
+    cite,
+    code,
+    del,
+    dfn,
+    em,
+    img,
+    ins,
+    kbd,
+    q,
+    s,
+    samp,
+    small,
+    strike,
+    strong,
+    sub,
+    sup,
+    tt,
+    var,
+    b,
+    u,
+    i,
+    center,
+    dl,
+    dt,
+    dd,
+    ol,
+    ul,
+    li,
+    fieldset,
+    form,
+    label,
+    legend,
+    table,
+    caption,
+    tbody,
+    tfoot,
+    thead,
+    tr,
+    th,
+    td,
+    article,
+    aside,
+    canvas,
+    details,
+    embed,
+    figure,
+    figcaption,
+    footer,
+    header,
+    hgroup,
+    menu,
+    nav,
+    output,
+    ruby,
+    section,
+    summary,
+    time,
+    mark,
+    audio,
+    video {
+      margin: 0;
+      padding: 0;
+      border: 0;
+      font-size: 100%;
+      font: inherit;
+      vertical-align: baseline;
+      box-sizing: border-box;
+    }
+
+    /* HTML5 display-role reset for older browsers */
+    article,
+    aside,
+    details,
+    figcaption,
+    figure,
+    footer,
+    header,
+    hgroup,
+    menu,
+    nav,
+    section {
+      display: block;
+    }
+
+    body {
+      line-height: 1;
+    }
+
+    ol,
+    ul {
+      list-style: none;
+    }
+
+    blockquote,
+    q {
+      quotes: none;
+    }
+
+    blockquote:before,
+    blockquote:after,
+    q:before,
+    q:after {
+      content: '';
+      content: none;
+    }
+
+    table {
+      border-collapse: collapse;
+      border-spacing: 0;
+    }
+
+    a {
+      text-decoration: none;
+    }
+
+    /*Custom css*/
+
+    html {
+      width: 100%;
+      font-size: 16px;
+      background-color: black;
+    }
+
+    body {
+      width: 100%;
+      height: 100%;
+      background-color: white;
+      display: flex;
+      flex-flow: column nowrap;
+      justify-content: flex-start;
+      align-items: center;
+      overflow-x: hidden;
+      font-family: 'Montserrat', sans-serif;
+      font-weight: 400;
+      font-style: normal;
+    }
+
+    *:not(img)::-moz-selection {
+      background-color: #FF512F;
+      color: white;
+    }
+
+    *:not(img)::selection {
+      background-color: #FF512F;
+      color: white;
+    }
+
+    img::selection {
+      background-color: none !important;
+    }
+
+    h1,
+    h2 {
+      text-transform: uppercase;
+      font-size: 1.8em;
+      padding: 0 0.5em;
+    }
+
+    h1 {
+      font-weight: 600;
+    }
+
+    h2 {
+      font-weight: 300;
+    }
+
+    p {
+      letter-spacing: .05em;
+      font-weight: 200;
+      margin: 2em 0;
+      line-height: 1.5;
+    }
+
+    b {
+      font-weight: 600;
+    }
+
+    i {
+      font-style: italic;
+      font-weight: 600;
+    }
+
+    header,
+    body>section,
+    footer {
+      position: relative;
+      width: 100%;
+      padding: 1em;
+      overflow: hidden;
+      display: flex;
+      flex-flow: row nowrap;
+      justify-content: center;
+      align-items: center;
+      overflow-x: hidden;
+    }
+
+    /*HEADER*/
+
+    header {
+      height: 400px;
+      color: white;
+    }
+
+    header .background {
+      position: absolute;
+      z-index: 0;
+      top: 0;
+      left: 0;
+      height: 100%;
+      width: 100%;
+      background-image: linear-gradient(135deg, #00609B, #103F69 75%);
+      clip-path: polygon(0 0, 100% 0, 100% 60%, 0 80%);
+      -webkit-clip-path: polygon(0 0, 100% 0, 100% 60%, 0 80%);
+    }
+
+    .content {
+      max-width: 800px;
+      height: 100%;
+      width: 100%;
+      z-index: 1;
+    }
+
+    header .content {
+      display: flex;
+      flex-flow: row;
+    }
+
+    header .content>div {
+      flex-grow: 1;
+      width: 50%;
+      display: flex;
+      flex-flow: column;
+    }
+
+    header .content .left {
+      align-self: flex-start;
+    }
+
+    header .content .left .MainLOGO {
+      width: 100%;
+      height: auto;
+      padding: 2em 0;
+    }
+
+    header h2 {
+      word-wrap: none;
+    }
+
+    header .content .right {
+      align-self: flex-end;
+      align-items: flex-end;
+      justify-content: flex-end;
+      height: 100%;
+    }
+
+    header .content .right .illustration {
+      width: 15em;
+      max-width: 100%;
+      height: auto;
+    }
+
+    /*EMAIL BODY*/
+
+    body>section {
+      flex-flow: column;
+      justify-content: space-between;
+      align-items: flex-start;
+      max-width: 800px;
+    }
+
+    .LondonInfo {
+      min-width: 200px;
+      height: auto;
+    }
+
+    .tableText {
+      display: flex;
+      flex-flow: row;
+    }
+
+    .btnContainer {
+      margin: 2em 0;
+      display: flex;
+      flex-flow: column;
+      justify-content: center;
+      align-items: center;
+      align-self: center;
+    }
+
+    .button {
+      font-size: 1.2em;
+      padding: 1em 2em;
+      margin: .5em 0;
+      border-radius: 8px;
+      color: white;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+      background-image: linear-gradient(45deg, #FF512F, #F09819);
+      border: none;
+      cursor: pointer;
+    }
+
+    .button:hover {
+      background-image: linear-gradient(45deg, #F09819, #FF512F);
+    }
+
+    .tandc i {
+      font-weight: 400;
+    }
+
+    a i {
+      color: #F09819;
+    }
+
+    a:hover i {
+      color: #FF512F;
+    }
+
+    /*FOOTER*/
+
+    footer {
+      width: 100%;
+      max-width: 800px;
+      flex-flow: column;
+      align-items: flex-start;
+    }
+
+    .footerContent {
+      height: 10px;
+      width: 100%;
+      max-width: 800px;
+      background-image: linear-gradient(90deg, #00609B 0%, #103F69 50%, #FF512F 50%, #F09819 100%);
+      padding: 0;
+    }
+
+    footer .signature {
+      margin: 1em 0;
+      display: flex;
+      flex-flow: column;
+    }
+
+    footer .signature>* {
+      padding: 8px 0;
+    }
+
+    footer h2 {
+      font-weight: 600;
+    }
+
+    footer a {
+      color: black;
+      text-transform: uppercase;
+    }
+
+    footer a:hover {
+      color: #FF512F;
+    }
+
+    footer .signature>div a {
+      margin-right: 1em;
+    }
+
+    footer .signature>div a:hover svg {
+      fill: #FF512F;
+    }
+
+    .signature svg:hover .circle {
+      stroke: #FF512F;
+    }
+
+    /*MEDIA QUERIES*/
+
+    @media only screen and (max-width: 550px) {
+      .tableText {
+        flex-flow: column;
+        align-items: center;
+      }
+
+      .tableText svg {
+        order: -1;
+        width: 60%;
+      }
+    }
+
+    @media only screen and (max-width: 750px) {
+      header h2 {
+        font-size: 1.1em;
+      }
+    }
+  </style>
 </head>
 
 <body>
@@ -313,7 +729,8 @@
     <div class="tableText">
       <div>
         <p>
-          Our goal is to make TOURGO your new favourite app and shape it exactly how you would like it to be. To do so, we will
+          Our goal is to make TOURGO your new favourite app and shape it exactly how you would like it to be. To do so,
+          we will
           need
           a little of your help…
         </p>
@@ -383,7 +800,8 @@ Challenges" transform="translate(648.314 1711.067)" fill="#fff" font-size="8" fo
     <p>
       You will not only contribute in shaping the app, but you will also <b>gain your first TOURGO points</b> and the
       chance to
-      <b>win 1 of 5 JUST EAT gift cards worth £20</b> 🎯🎁<a class="tandc" href=""><i> ( Read terms and conditions ) </i></a>!
+      <b>win 1 of 5 JUST EAT gift cards worth £20</b> 🎯🎁<a class="tandc" href=""><i> ( Read terms and conditions )
+        </i></a>!
     </p>
 
     <p>
@@ -408,31 +826,41 @@ Challenges" transform="translate(648.314 1711.067)" fill="#fff" font-size="8" fo
       <a href="mailto:company@tourgoapp.com">company@tourgoapp.com</a>
       <a href="http://tourgoapp.com" target="_blank">tourgoapp.com</a>
       <div>
-        <a href="" target="_blank"><svg id="fb_icon" xmlns="http://www.w3.org/2000/svg" width="40" height="40" viewBox="0 0 19 19">
-          <g id="Ellipse_74" data-name="Ellipse 74" fill="none" stroke="#000" stroke-width="1">
-            <circle cx="9.5" cy="9.5" r="9.5" stroke="none"/>
-            <circle cx="9.5" cy="9.5" r="9" fill="none"/>
-          </g>
-          <g id="facebook" transform="translate(6.087 4.167)">
-            <path id="Path_985" data-name="Path 985" d="M27.733,0l-1.41,0a2.476,2.476,0,0,0-2.607,2.675V3.909H22.3a.222.222,0,0,0-.222.222V5.918a.222.222,0,0,0,.222.222h1.417v4.51a.222.222,0,0,0,.222.222h1.849a.222.222,0,0,0,.222-.222V6.139h1.657a.222.222,0,0,0,.222-.222V4.13a.222.222,0,0,0-.222-.222H26.009V2.863c0-.5.12-.758.774-.758h.95a.222.222,0,0,0,.222-.222V.224A.222.222,0,0,0,27.733,0Z" transform="translate(-22.077)"/>
-          </g>
-        </svg></a>
-        
+        <a href="" target="_blank"><svg id="fb_icon" xmlns="http://www.w3.org/2000/svg" width="40" height="40"
+            viewBox="0 0 19 19">
+            <g class="circle" data-name="Ellipse 74" fill="none" stroke="#000" stroke-width="1">
+              <circle cx="9.5" cy="9.5" r="9.5" stroke="none" />
+              <circle cx="9.5" cy="9.5" r="9" fill="none" />
+            </g>
+            <g id="facebook" transform="translate(6.087 4.167)">
+              <path id="Path_985" data-name="Path 985"
+                d="M27.733,0l-1.41,0a2.476,2.476,0,0,0-2.607,2.675V3.909H22.3a.222.222,0,0,0-.222.222V5.918a.222.222,0,0,0,.222.222h1.417v4.51a.222.222,0,0,0,.222.222h1.849a.222.222,0,0,0,.222-.222V6.139h1.657a.222.222,0,0,0,.222-.222V4.13a.222.222,0,0,0-.222-.222H26.009V2.863c0-.5.12-.758.774-.758h.95a.222.222,0,0,0,.222-.222V.224A.222.222,0,0,0,27.733,0Z"
+                transform="translate(-22.077)" />
+            </g>
+          </svg></a>
+
         <a href="" target="_blank"><svg xmlns="http://www.w3.org/2000/svg" width="40" height="38" viewBox="0 0 20 19">
-          <g id="twt_icon" transform="translate(-0.194)">
-            <g id="Ellipse_74" data-name="Ellipse 74" transform="translate(0.194)" fill="none" stroke="#000" stroke-width="1">
-              <ellipse cx="10" cy="9.5" rx="10" ry="9.5" stroke="none"/>
-              <ellipse cx="10" cy="9.5" rx="9.5" ry="9" fill="none"/>
+            <g id="twt_icon" transform="translate(-0.194)">
+              <g class="circle" data-name="Ellipse 74" transform="translate(0.194)" fill="none" stroke="#000"
+                stroke-width="1">
+                <ellipse cx="10" cy="9.5" rx="10" ry="9.5" stroke="none" />
+                <ellipse cx="10" cy="9.5" rx="9.5" ry="9" fill="none" />
+              </g>
+              <g id="instagram" transform="translate(4.671 4.384)">
+                <path id="Path_992" data-name="Path 992"
+                  d="M10.8,3.051a3.791,3.791,0,0,0-.241-1.259A2.658,2.658,0,0,0,9.037.274,3.8,3.8,0,0,0,7.779.032C7.223.006,7.047,0,5.638,0S4.053.006,3.5.03A3.792,3.792,0,0,0,2.241.272a2.532,2.532,0,0,0-.92.6,2.555,2.555,0,0,0-.6.918A3.8,3.8,0,0,0,.482,3.048C.455,3.6.449,3.78.449,5.189S.455,6.774.48,7.327A3.791,3.791,0,0,0,.721,8.586,2.657,2.657,0,0,0,2.239,10.1a3.8,3.8,0,0,0,1.259.241c.553.024.73.03,2.138.03s1.585-.006,2.138-.03A3.79,3.79,0,0,0,9.033,10.1a2.654,2.654,0,0,0,1.518-1.518,3.8,3.8,0,0,0,.241-1.259c.024-.553.03-.73.03-2.138S10.821,3.6,10.8,3.051ZM9.862,7.287a2.844,2.844,0,0,1-.178.963,1.721,1.721,0,0,1-.985.985,2.854,2.854,0,0,1-.963.178c-.547.024-.711.03-2.1.03s-1.551-.006-2.1-.03a2.842,2.842,0,0,1-.963-.178,1.6,1.6,0,0,1-.6-.387,1.613,1.613,0,0,1-.387-.6,2.854,2.854,0,0,1-.178-.963c-.024-.547-.03-.711-.03-2.1s.006-1.551.03-2.1A2.842,2.842,0,0,1,1.6,2.134a1.577,1.577,0,0,1,.389-.6,1.611,1.611,0,0,1,.6-.387A2.856,2.856,0,0,1,3.546.973c.547-.024.711-.03,2.1-.03s1.551.006,2.1.03a2.844,2.844,0,0,1,.963.178,1.6,1.6,0,0,1,.6.387,1.613,1.613,0,0,1,.387.6,2.856,2.856,0,0,1,.178.963c.024.547.03.711.03,2.1S9.887,6.739,9.862,7.287Zm0,0"
+                  transform="translate(-0.449 0)" />
+                <path id="Path_993" data-name="Path 993"
+                  d="M127.615,124.5a2.665,2.665,0,1,0,2.665,2.665A2.666,2.666,0,0,0,127.615,124.5Zm0,4.394a1.729,1.729,0,1,1,1.729-1.729A1.729,1.729,0,0,1,127.615,128.894Zm0,0"
+                  transform="translate(-122.426 -121.976)" />
+                <path id="Path_994" data-name="Path 994"
+                  d="M363.694,89.224a.622.622,0,1,1-.622-.622A.622.622,0,0,1,363.694,89.224Zm0,0"
+                  transform="translate(-355.112 -86.806)" />
+              </g>
             </g>
-            <g id="instagram" transform="translate(4.671 4.384)">
-              <path id="Path_992" data-name="Path 992" d="M10.8,3.051a3.791,3.791,0,0,0-.241-1.259A2.658,2.658,0,0,0,9.037.274,3.8,3.8,0,0,0,7.779.032C7.223.006,7.047,0,5.638,0S4.053.006,3.5.03A3.792,3.792,0,0,0,2.241.272a2.532,2.532,0,0,0-.92.6,2.555,2.555,0,0,0-.6.918A3.8,3.8,0,0,0,.482,3.048C.455,3.6.449,3.78.449,5.189S.455,6.774.48,7.327A3.791,3.791,0,0,0,.721,8.586,2.657,2.657,0,0,0,2.239,10.1a3.8,3.8,0,0,0,1.259.241c.553.024.73.03,2.138.03s1.585-.006,2.138-.03A3.79,3.79,0,0,0,9.033,10.1a2.654,2.654,0,0,0,1.518-1.518,3.8,3.8,0,0,0,.241-1.259c.024-.553.03-.73.03-2.138S10.821,3.6,10.8,3.051ZM9.862,7.287a2.844,2.844,0,0,1-.178.963,1.721,1.721,0,0,1-.985.985,2.854,2.854,0,0,1-.963.178c-.547.024-.711.03-2.1.03s-1.551-.006-2.1-.03a2.842,2.842,0,0,1-.963-.178,1.6,1.6,0,0,1-.6-.387,1.613,1.613,0,0,1-.387-.6,2.854,2.854,0,0,1-.178-.963c-.024-.547-.03-.711-.03-2.1s.006-1.551.03-2.1A2.842,2.842,0,0,1,1.6,2.134a1.577,1.577,0,0,1,.389-.6,1.611,1.611,0,0,1,.6-.387A2.856,2.856,0,0,1,3.546.973c.547-.024.711-.03,2.1-.03s1.551.006,2.1.03a2.844,2.844,0,0,1,.963.178,1.6,1.6,0,0,1,.6.387,1.613,1.613,0,0,1,.387.6,2.856,2.856,0,0,1,.178.963c.024.547.03.711.03,2.1S9.887,6.739,9.862,7.287Zm0,0" transform="translate(-0.449 0)"/>
-              <path id="Path_993" data-name="Path 993" d="M127.615,124.5a2.665,2.665,0,1,0,2.665,2.665A2.666,2.666,0,0,0,127.615,124.5Zm0,4.394a1.729,1.729,0,1,1,1.729-1.729A1.729,1.729,0,0,1,127.615,128.894Zm0,0" transform="translate(-122.426 -121.976)"/>
-              <path id="Path_994" data-name="Path 994" d="M363.694,89.224a.622.622,0,1,1-.622-.622A.622.622,0,0,1,363.694,89.224Zm0,0" transform="translate(-355.112 -86.806)"/>
-            </g>
-          </g>
-        </svg></a>
+          </svg></a>
       </div>
-      
+
     </div>
   </footer>
 </body>

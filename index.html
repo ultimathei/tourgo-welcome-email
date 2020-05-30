@@ -1,894 +1,411 @@
-<!DOCTYPE html>
-<html lang="en">
+<!DOCTYPE html
+  PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml">
 
 <head>
-  <meta http-equiv="Content-Type" content="text/html charset=UTF-8" />
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>TOURGO Email</title>
-
-  <style>
-    /* http://meyerweb.com/eric/tools/css/reset/ 
-      v2.0 | 20110126
-      License: none (public domain)
-    */
-    html,
-    body,
-    div,
-    span,
-    applet,
-    object,
-    iframe,
-    h1,
-    h2,
-    h3,
-    h4,
-    h5,
-    h6,
-    p,
-    blockquote,
-    pre,
-    a,
-    abbr,
-    acronym,
-    address,
-    big,
-    cite,
-    code,
-    del,
-    dfn,
-    em,
-    img,
-    ins,
-    kbd,
-    q,
-    s,
-    samp,
-    small,
-    strike,
-    strong,
-    sub,
-    sup,
-    tt,
-    var,
-    b,
-    u,
-    i,
-    center,
-    dl,
-    dt,
-    dd,
-    ol,
-    ul,
-    li,
-    fieldset,
-    form,
-    label,
-    legend,
-    table,
-    caption,
-    tbody,
-    tfoot,
-    thead,
-    tr,
-    th,
-    td,
-    article,
-    aside,
-    canvas,
-    details,
-    embed,
-    figure,
-    figcaption,
-    footer,
-    header,
-    hgroup,
-    menu,
-    nav,
-    output,
-    ruby,
-    section,
-    summary,
-    time,
-    mark,
-    audio,
-    video {
-      margin: 0;
-      padding: 0;
-      border: 0;
-      font-size: 100%;
-      font: inherit;
-      vertical-align: baseline;
-      box-sizing: border-box;
-    }
-
-    /* HTML5 display-role reset for older browsers */
-    article,
-    aside,
-    details,
-    figcaption,
-    figure,
-    footer,
-    header,
-    hgroup,
-    menu,
-    nav,
-    section {
-      display: block;
-    }
-
-    body {
-      line-height: 1;
-    }
-
-    ol,
-    ul {
-      list-style: none;
-    }
-
-    blockquote,
-    q {
-      quotes: none;
-    }
-
-    blockquote:before,
-    blockquote:after,
-    q:before,
-    q:after {
-      content: '';
-      content: none;
-    }
-
-    table {
-      border-collapse: collapse;
-      border-spacing: 0;
-    }
-
-    a {
-      text-decoration: none;
-    }
-
-    /*Custom css*/
-
-    html {
-      width: 100%;
-      font-size: 16px;
-      background-color: black;
-    }
-
-    body {
-      width: 100%;
-      height: 100%;
-      background-color: white;
-      display: -webkit-box; display: -webkit-flex; display: -ms-flexbox; display: flex;
-      flex-flow: column nowrap;
-      justify-content: flex-start;
-      align-items: center;
-      overflow-x: hidden;
-      font-family: 'Montserrat', sans-serif;
-      font-weight: 400;
-      font-style: normal;
-    }
-
-    *:not(img)::-moz-selection {
-      background-color: #FF512F;
-      color: white;
-    }
-
-    *:not(img)::selection {
-      background-color: #FF512F;
-      color: white;
-    }
-
-    img::selection {
-      background-color: none !important;
-    }
-
-    h1,
-    h2 {
-      text-transform: uppercase;
-      font-size: 1.8em;
-      padding: 0 20px;
-    }
-
-    h1 {
-      font-weight: 600;
-      font-size: 2.5em;
-    }
-
-    h2 {
-      font-weight: 300;
-    }
-
-    p {
-      letter-spacing: .05em;
-      font-weight: 200;
-      line-height: 1.5;
-    }
-
-    b {
-      font-weight: 600;
-    }
-
-    i {
-      font-style: italic;
-      font-weight: 600;
-    }
-
-    header,
-    body>section,
-    footer {
-      position: relative;
-      width: 100%;
-      padding: 1em;
-      overflow: hidden;
-      display: -webkit-box; display: -webkit-flex; display: -ms-flexbox; display: flex;
-      flex-flow: row nowrap;
-      justify-content: center;
-      align-items: center;
-      overflow-x: hidden;
-    }
-
-    /*HEADER*/
-
-    header {
-      height: 400px;
-      color: white;
-    }
-
-    header .background {
-      position: absolute;
-      z-index: 0;
-      top: 0;
-      left: 0;
-      height: 100%;
-      width: 100%;
-      background-image: linear-gradient(135deg, #00609B, #103F69 75%);
-      clip-path: polygon(0 0, 100% 0, 100% 60%, 0 80%);
-      -webkit-clip-path: polygon(0 0, 100% 0, 100% 60%, 0 80%);
-    }
-
-    .content {
-      max-width: 800px;
-      height: 100%;
-      width: 100%;
-      z-index: 1;
-    }
-
-    header .content {
-      display: -webkit-box; display: -webkit-flex; display: -ms-flexbox; display: flex;
-      flex-flow: row;
-    }
-
-    header .content>div {
-      flex-grow: 1;
-      width: 50%;
-      display: -webkit-box; display: -webkit-flex; display: -ms-flexbox; display: flex;
-      flex-flow: column;
-    }
-
-    header .content .left {
-      align-self: flex-start;
-    }
-
-    header .content .left .MainLOGO {
-      width: 100%;
-      height: auto;
-      padding: 2em 0;
-    }
-
-    header h2 {
-      white-space: nowrap;
-    }
-
-    header .content .right {
-      align-self: flex-end;
-      align-items: flex-end;
-      justify-content: flex-end;
-      height: 100%;
-    }
-
-    header .content .right .illustration {
-      width: 15em;
-      max-width: 100%;
-      height: auto;
-    }
-
-    /*EMAIL BODY*/
-
-    body>section {
-      flex-flow: column;
-      justify-content: space-between;
-      align-items: flex-start;
-      max-width: 800px;
-    }
-
-    .LondonInfo {
-      min-width: 200px;
-      height: auto;
-    }
-
-    .tableText {
-      display: -webkit-box; display: -webkit-flex; display: -ms-flexbox; display: flex;
-      flex-flow: row;
-    }
-
-    .btnContainer {
-      margin: 2em 0;
-      display: -webkit-box; display: -webkit-flex; display: -ms-flexbox; display: flex;
-      flex-flow: column;
-      justify-content: center;
-      align-items: center;
-      align-self: center;
-    }
-
-    .button {
-      font-size: 1.2em;
-      padding: 1em 2em;
-      margin: .5em 0;
-      border-radius: 8px;
-      color: white;
-      text-transform: uppercase;
-      letter-spacing: 0.05em;
-      background-image: linear-gradient(45deg, #FF512F, #F09819);
-      border: none;
-      cursor: pointer;
-    }
-
-    .button:hover {
-      background-image: linear-gradient(45deg, #F09819, #FF512F);
-    }
-
-    .tandc i {
-      font-weight: 400;
-    }
-
-    a i {
-      color: #F09819;
-    }
-
-    a:hover i {
-      color: #FF512F;
-    }
-
-    /*FOOTER*/
-
-    footer {
-      width: 100%;
-      max-width: 800px;
-      flex-flow: column;
-      align-items: flex-start;
-    }
-
-    .footerContent {
-      height: 10px;
-      width: 100%;
-      max-width: 800px;
-      background-image: linear-gradient(90deg, #00609B 0%, #103F69 50%, #FF512F 50%, #F09819 100%);
-      padding: 0;
-    }
-
-    footer .signature {
-      margin: 1em 0;
-      display: -webkit-box; display: -webkit-flex; display: -ms-flexbox; display: flex;
-      flex-flow: column;
-    }
-
-    footer .signature>* {
-      padding: 8px 0;
-    }
-
-    footer h2 {
-      font-weight: 600;
-    }
-
-    footer a {
-      color: black;
-      text-transform: uppercase;
-    }
-
-    footer a:hover {
-      color: #FF512F;
-    }
-
-    footer .signature>div a {
-      margin-right: 1em;
-    }
-
-    footer .signature>div a:hover svg {
-      fill: #FF512F;
-    }
-
-    .signature svg:hover .circle {
-      stroke: #FF512F;
-    }
-
-    /*MEDIA QUERIES*/
-
-    @media only screen and (max-width: 550px) {
-      .tableText {
-        flex-flow: column;
-        align-items: center;
-      }
-
-      .tableText svg {
-        order: -1;
-        width: 60%;
-      }
-    }
-
-    @media only screen and (max-width: 750px) {
-      header h2 {
-        font-size: 1.1em;
-      }
-
-      header h1 {
-        font-size: 2em;
-      }
-    }
-  </style>
 </head>
 
-<body>
-  <header>
-    <div class="content">
-      <div class="left">
-        <svg class="MainLOGO" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
-          width="552.987" height="128.612" viewbox="0 0 552.987 128.612">
-          <defs>
-            <linearGradient id="linear-gradient" y1="0.5" x2="1" y2="0.5" gradientUnits="objectBoundingBox">
-              <stop offset="0" stop-color="#ff512f" />
-              <stop offset="1" stop-color="#f09819" />
-            </linearGradient>
-          </defs>
-          <g id="slogen" transform="translate(17.702 110.696)">
-            <g id="Group_3" data-name="Group 3" transform="translate(0 0)">
-              <g id="Group_2" data-name="Group 2">
-                <path id="Path_1" data-name="Path 1"
-                  d="M670.255,574.569l-.1.578a.708.708,0,0,1-.721.651h-1.611c-.409,0-.576-.242-.5-.627l.1-.554c.264-1.54-.361-2.335-2.62-2.335-2.069,0-3.1.722-3.343,2.142l-.1.554c-.217,1.228.264,1.613,1.514,1.974l3.005.867c2.236.65,3.655,1.685,3.1,4.79l-.073.409c-.48,2.672-2.308,4.453-6.468,4.453-4.448,0-5.962-1.661-5.481-4.453l.119-.7a.708.708,0,0,1,.722-.65h1.611c.409,0,.576.241.5.626l-.121.674c-.289,1.564.386,2.311,2.717,2.311,2.213,0,3.271-.722,3.535-2.287l.1-.554c.216-1.276-.24-1.661-1.49-2.022l-3.005-.867c-2.236-.65-3.655-1.685-3.127-4.742l.072-.409c.458-2.527,2.236-4.308,6.276-4.308C669.269,570.092,670.711,571.8,670.255,574.569Z"
-                  transform="translate(-656.874 -570.092)" fill="#fff" />
-                <path id="Path_2" data-name="Path 2"
-                  d="M686.083,587.237h-4.592a.51.51,0,0,1-.553-.626l.168-.939a.734.734,0,0,1,.769-.6h.793l6.54-13.7a1.529,1.529,0,0,1,1.395-1.059h2.044c.6,0,.914.313,1.01,1.059l1.707,13.7h.817a.51.51,0,0,1,.553.626l-.168.939a.734.734,0,0,1-.769.6h-5.121a.51.51,0,0,1-.553-.626l.168-.939a.737.737,0,0,1,.769-.578h1.346l-.337-3.1h-5.506l-1.443,3.1h1.346a.5.5,0,0,1,.553.6l-.168.939A.734.734,0,0,1,686.083,587.237Zm1.467-7.341h4.28l-.818-7.437Z"
-                  transform="translate(-660.272 -570.123)" fill="#fff" />
-                <path id="Path_3" data-name="Path 3"
-                  d="M716.269,587.321h-1.9c-.6,0-.938-.313-1.01-1.059l-1.707-13.7h-.818a.51.51,0,0,1-.553-.626l.168-.939a.734.734,0,0,1,.769-.6h5.121a.51.51,0,0,1,.553.626l-.168.939a.737.737,0,0,1-.769.578H714.61l1.37,12.4,5.771-12.4H720.4a.5.5,0,0,1-.553-.6l.168-.939a.734.734,0,0,1,.769-.6h4.592a.51.51,0,0,1,.553.626l-.168.939a.734.734,0,0,1-.769.6H724.2l-6.54,13.7A1.507,1.507,0,0,1,716.269,587.321Z"
-                  transform="translate(-664.419 -570.135)" fill="#fff" />
-                <path id="Path_4" data-name="Path 4"
-                  d="M747.571,587.249h-11.06a.51.51,0,0,1-.553-.626l.168-.939a.734.734,0,0,1,.769-.6h1.37l2.212-12.516h-1.37a.51.51,0,0,1-.553-.626l.168-.939a.734.734,0,0,1,.769-.6H750.5c.625,0,.938.337.817.987l-.6,3.466a.889.889,0,0,1-.914.794h-.818a.618.618,0,0,1-.673-.818l.409-2.359h-5.29l-.89,5.055h3.438a.91.91,0,0,1,.962,1.107l-.024.145a1.186,1.186,0,0,1-1.25.986h-3.51l-.962,5.416h5.29l.457-2.6a.889.889,0,0,1,.914-.794h.817a.618.618,0,0,1,.673.818l-.649,3.683A1.062,1.062,0,0,1,747.571,587.249Z"
-                  transform="translate(-668.047 -570.135)" fill="#fff" />
-              </g>
-            </g>
-            <g id="Group_5" data-name="Group 5" transform="translate(402.146 0)">
-              <g id="Group_4" data-name="Group 4">
-                <path id="Path_5" data-name="Path 5"
-                  d="M1136.821,587.249h-11.06a.51.51,0,0,1-.552-.626l.168-.939a.733.733,0,0,1,.769-.6h1.37l2.213-12.516h-1.371a.51.51,0,0,1-.554-.626l.169-.939a.734.734,0,0,1,.77-.6h11.011a.739.739,0,0,1,.818.987l-.6,3.466a.889.889,0,0,1-.913.794h-.817a.618.618,0,0,1-.673-.818l.409-2.359h-5.29l-.89,5.055h3.438a.911.911,0,0,1,.962,1.107l-.024.145a1.187,1.187,0,0,1-1.251.986h-3.509l-.963,5.416h5.29l.457-2.6a.889.889,0,0,1,.913-.794h.818a.618.618,0,0,1,.674.818l-.649,3.683A1.062,1.062,0,0,1,1136.821,587.249Z"
-                  transform="translate(-1125.197 -570.135)" fill="#fff" />
-                <path id="Path_6" data-name="Path 6"
-                  d="M1164.082,587.321H1162.9c-1.057,0-1.346-.313-1.562-1.348l-2.838-13.118-2.163,12.228h1.395a.51.51,0,0,1,.552.626l-.167.939a.734.734,0,0,1-.77.6h-5.073a.509.509,0,0,1-.552-.626l.168-.939a.733.733,0,0,1,.768-.6h1.394l2.213-12.516h-1.394a.51.51,0,0,1-.554-.626l.168-.939a.735.735,0,0,1,.77-.6h4.328c.985,0,1.3.313,1.49,1.324l2.6,12.853,2.115-12.011H1164.4a.51.51,0,0,1-.552-.626l.167-.939a.734.734,0,0,1,.77-.6h5.072a.51.51,0,0,1,.553.626l-.168.939a.734.734,0,0,1-.769.6h-1.395l-2.357,13.383A1.537,1.537,0,0,1,1164.082,587.321Z"
-                  transform="translate(-1128.944 -570.135)" fill="#fff" />
-                <path id="Path_7" data-name="Path 7"
-                  d="M1181.528,582.435l.193-1.083a1.419,1.419,0,0,1,1.467-1.324h.192a1.079,1.079,0,0,1,1.154,1.4l-.192,1.011c-.361,1.853.264,2.84,2.116,2.84,1.515,0,2.332-.794,2.645-2.6l1.779-10.109h-1.563a.509.509,0,0,1-.552-.626l.167-.939a.734.734,0,0,1,.769-.6h5.891a.51.51,0,0,1,.553.626l-.168.939a.734.734,0,0,1-.769.6h-1.347l-1.779,10.037c-.577,3.322-2.621,4.91-5.795,4.91C1182.706,587.514,1180.951,585.732,1181.528,582.435Z"
-                  transform="translate(-1133.142 -570.135)" fill="#fff" />
-                <path id="Path_8" data-name="Path 8"
-                  d="M1216.122,570.092c4.207,0,6.588,2.311,5.89,6.138l-.962,5.488c-.672,3.827-3.078,5.753-7.116,5.753-4.208,0-6.589-2.311-5.891-6.138l.962-5.488C1209.678,572.018,1212.083,570.092,1216.122,570.092Zm-2.116,15.14c2.379,0,3.557-1.035,3.966-3.322l1.034-5.873c.41-2.383-.5-3.707-2.957-3.707-2.381,0-3.559,1.035-3.967,3.323l-1.034,5.872C1210.639,583.908,1211.553,585.232,1214.006,585.232Z"
-                  transform="translate(-1136.887 -570.092)" fill="#fff" />
-                <path id="Path_9" data-name="Path 9"
-                  d="M1242.839,587.249h-5.819a.509.509,0,0,1-.552-.626l.167-.939a.735.735,0,0,1,.77-.6h1.442l.793-4.549-3.126-7.967h-.769a.51.51,0,0,1-.554-.626l.169-.939a.734.734,0,0,1,.769-.6h5.026a.509.509,0,0,1,.552.626l-.167.939a.737.737,0,0,1-.77.578h-1.081l2.091,5.656,4.039-5.656h-1.153a.5.5,0,0,1-.554-.6l.168-.939a.735.735,0,0,1,.77-.6h4.616a.509.509,0,0,1,.552.626l-.168.939a.734.734,0,0,1-.769.6h-.77l-5.915,7.943-.792,4.573h1.418a.509.509,0,0,1,.552.626l-.168.939A.734.734,0,0,1,1242.839,587.249Z"
-                  transform="translate(-1140.739 -570.135)" fill="#fff" />
-              </g>
-            </g>
-            <g id="Group_7" data-name="Group 7" transform="translate(120.952 0.537)">
-              <g id="Group_6" data-name="Group 6">
-                <path id="Path_10" data-name="Path 10"
-                  d="M809.354,587.874h-11.06a.51.51,0,0,1-.553-.626l.168-.939a.734.734,0,0,1,.769-.6h1.37l2.212-12.516h-1.37a.51.51,0,0,1-.553-.626l.168-.939a.734.734,0,0,1,.769-.6h11.012c.625,0,.938.337.818.987l-.6,3.466a.889.889,0,0,1-.914.794h-.817a.618.618,0,0,1-.673-.818l.409-2.359h-5.29l-.89,5.055h3.438a.91.91,0,0,1,.962,1.107l-.024.145a1.186,1.186,0,0,1-1.25.986h-3.51l-.962,5.416h5.29l.457-2.6a.889.889,0,0,1,.914-.794h.817a.618.618,0,0,1,.673.818l-.649,3.683A1.062,1.062,0,0,1,809.354,587.874Z"
-                  transform="translate(-797.729 -570.76)" fill="#fff" />
-                <path id="Path_11" data-name="Path 11"
-                  d="M828.939,587.874H824.25a.51.51,0,0,1-.553-.626l.168-.939a.734.734,0,0,1,.769-.6h.745l5.458-6.354-3.2-6.162h-.745a.51.51,0,0,1-.553-.626l.168-.939a.734.734,0,0,1,.769-.6h5.1a.51.51,0,0,1,.553.626l-.168.939a.737.737,0,0,1-.769.578h-1.106l2.236,4.549,3.8-4.549h-1.13a.5.5,0,0,1-.553-.6l.168-.939a.734.734,0,0,1,.769-.6h4.688a.51.51,0,0,1,.553.626l-.168.939a.734.734,0,0,1-.769.6h-.745l-5.386,6.258,3.246,6.258h.745a.51.51,0,0,1,.553.626l-.168.939a.734.734,0,0,1-.769.6h-5.1a.51.51,0,0,1-.553-.626l.168-.939a.737.737,0,0,1,.769-.578h1.106l-2.284-4.646-3.871,4.646h1.13a.5.5,0,0,1,.553.6l-.168.939A.734.734,0,0,1,828.939,587.874Z"
-                  transform="translate(-801.397 -570.76)" fill="#fff" />
-                <path id="Path_12" data-name="Path 12"
-                  d="M858.42,587.874h-5.89a.51.51,0,0,1-.553-.626l.168-.939a.734.734,0,0,1,.769-.6h1.37l2.212-12.516h-1.371a.51.51,0,0,1-.553-.626l.169-.939a.734.734,0,0,1,.769-.6h6.755c3.7,0,5.627,1.685,5.1,4.766l-.264,1.541c-.529,3.081-2.814,4.284-6.227,4.284h-2.909l-.721,4.092h1.563a.51.51,0,0,1,.553.626l-.169.939A.734.734,0,0,1,858.42,587.874Zm-.1-8.352h2.6c1.731,0,2.909-.7,3.2-2.455l.265-1.444c.313-1.757-.625-2.455-2.356-2.455h-2.573Z"
-                  transform="translate(-805.393 -570.76)" fill="#fff" />
-                <path id="Path_13" data-name="Path 13"
-                  d="M890.217,587.874h-11.06a.51.51,0,0,1-.553-.626l.169-.939a.734.734,0,0,1,.769-.6h1.37l2.213-12.516h-1.371a.51.51,0,0,1-.553-.626l.169-.939a.734.734,0,0,1,.769-.6H893.15a.739.739,0,0,1,.818.987l-.6,3.466a.889.889,0,0,1-.914.794h-.817a.617.617,0,0,1-.673-.818l.409-2.359h-5.29l-.89,5.055h3.439a.91.91,0,0,1,.961,1.107l-.023.145a1.187,1.187,0,0,1-1.251.986h-3.51l-.963,5.416h5.29l.456-2.6a.89.89,0,0,1,.914-.794h.817a.618.618,0,0,1,.674.818l-.65,3.683A1.06,1.06,0,0,1,890.217,587.874Z"
-                  transform="translate(-809.156 -570.76)" fill="#fff" />
-                <path id="Path_14" data-name="Path 14"
-                  d="M915.916,587.248l-3.1-6.114a1.366,1.366,0,0,1-.192-1.011l.024-.12a.838.838,0,0,1,.914-.746h.89c1.587,0,2.669-.6,2.909-1.974l.385-2.19c.24-1.324-.625-1.926-2.236-1.926H912.6l-2.212,12.54h1.346a.51.51,0,0,1,.553.626l-.168.939a.734.734,0,0,1-.769.6h-5.674a.51.51,0,0,1-.553-.626l.168-.939a.734.734,0,0,1,.769-.6h1.37l2.212-12.516h-1.37a.51.51,0,0,1-.553-.626l.168-.939a.734.734,0,0,1,.769-.6h7c3.847,0,5.53,1.637,5.025,4.4l-.361,2.022c-.409,2.238-1.779,3.346-4.352,3.659l2.645,4.862a1.39,1.39,0,0,1-.673,1.974A1.5,1.5,0,0,1,915.916,587.248Z"
-                  transform="translate(-812.903 -570.76)" fill="#fff" />
-                <path id="Path_15" data-name="Path 15"
-                  d="M933.029,587.874a.51.51,0,0,1-.553-.626l.168-.939a.734.734,0,0,1,.769-.6h1.515l2.212-12.516h-1.515a.51.51,0,0,1-.553-.626l.168-.939a.734.734,0,0,1,.769-.6H942a.51.51,0,0,1,.553.626l-.168.939a.734.734,0,0,1-.769.6H940.1l-2.212,12.516H939.4a.51.51,0,0,1,.553.626l-.168.939a.734.734,0,0,1-.769.6Z"
-                  transform="translate(-816.768 -570.76)" fill="#fff" />
-                <path id="Path_16" data-name="Path 16"
-                  d="M964,587.874h-11.06a.51.51,0,0,1-.553-.626l.168-.939a.734.734,0,0,1,.769-.6h1.37l2.212-12.516h-1.37a.51.51,0,0,1-.553-.626l.168-.939a.734.734,0,0,1,.769-.6H966.93c.625,0,.938.337.818.987l-.6,3.466a.889.889,0,0,1-.914.794h-.817a.618.618,0,0,1-.673-.818l.409-2.359h-5.29l-.89,5.055h3.438a.91.91,0,0,1,.962,1.107l-.024.145a1.186,1.186,0,0,1-1.25.986h-3.51l-.962,5.416h5.29l.457-2.6a.89.89,0,0,1,.914-.794h.818a.618.618,0,0,1,.673.818l-.649,3.683A1.062,1.062,0,0,1,964,587.874Z"
-                  transform="translate(-819.581 -570.76)" fill="#fff" />
-                <path id="Path_17" data-name="Path 17"
-                  d="M991.258,587.946H990.08c-1.059,0-1.346-.313-1.563-1.348L985.68,573.48l-2.165,12.227h1.395a.51.51,0,0,1,.554.626l-.168.939a.735.735,0,0,1-.769.6h-5.073a.511.511,0,0,1-.554-.626l.169-.939a.734.734,0,0,1,.769-.6h1.394l2.211-12.516h-1.395a.509.509,0,0,1-.552-.626l.168-.939a.734.734,0,0,1,.769-.6h4.328c.986,0,1.3.313,1.491,1.324l2.6,12.853,2.116-12.011H991.57a.509.509,0,0,1-.552-.626l.168-.939a.733.733,0,0,1,.768-.6h5.074a.509.509,0,0,1,.552.626l-.167.939a.734.734,0,0,1-.77.6h-1.395l-2.356,13.383A1.535,1.535,0,0,1,991.258,587.946Z"
-                  transform="translate(-823.328 -570.76)" fill="#fff" />
-                <path id="Path_18" data-name="Path 18"
-                  d="M1015.877,588.1c-4.087,0-6.42-2.311-5.747-6.138l.963-5.488c.673-3.827,3.054-5.753,6.8-5.753,4.088,0,6.083,1.974,5.506,5.343l-.1.554c-.072.409-.289.65-.673.65H1021a.487.487,0,0,1-.53-.626l.1-.554c.361-2.046-.409-3.129-2.742-3.129-2.091,0-3.245,1.035-3.654,3.323l-1.035,5.872c-.408,2.383.482,3.707,2.814,3.707,2.091,0,3.078-.842,3.438-3.009l.144-.842a.677.677,0,0,1,.673-.626h1.658c.385,0,.577.241.5.65l-.144.842C1021.6,586.483,1019.628,588.1,1015.877,588.1Z"
-                  transform="translate(-827.727 -570.717)" fill="#fff" />
-                <path id="Path_19" data-name="Path 19"
-                  d="M1046.765,587.874H1035.7a.51.51,0,0,1-.554-.626l.169-.939a.734.734,0,0,1,.769-.6h1.371l2.212-12.516H1038.3a.509.509,0,0,1-.552-.626l.168-.939a.733.733,0,0,1,.769-.6H1049.7a.739.739,0,0,1,.818.987l-.6,3.466a.89.89,0,0,1-.914.794h-.817a.617.617,0,0,1-.673-.818l.408-2.359h-5.29l-.89,5.055h3.439a.91.91,0,0,1,.961,1.107l-.023.145a1.187,1.187,0,0,1-1.25.986h-3.51l-.962,5.416h5.29l.456-2.6a.891.891,0,0,1,.915-.794h.817a.618.618,0,0,1,.673.818l-.65,3.683A1.06,1.06,0,0,1,1046.765,587.874Z"
-                  transform="translate(-831.277 -570.76)" fill="#fff" />
-              </g>
-            </g>
-          </g>
-          <path id="TOUR"
-            d="M702.366,446.838v20.468H680.785v59.13h-23.4v-59.13H636.258V446.838Zm48.946-1.251c-26.807,0-42.935,18.876-42.935,41.049s16.129,41.05,42.935,41.05,42.936-18.876,42.936-41.05S778.119,445.587,751.313,445.587Zm0,61.631c-12.154,0-19.083-9.437-19.083-20.581s6.929-20.581,19.083-20.581,19.082,9.438,19.082,20.581S763.466,507.218,751.313,507.218Zm79.669-60.38V495.62c0,7.505,4.658,11.6,10.336,11.6s10.565-4.093,10.565-11.6V446.838h23.853V495.62c0,20.809-15.789,32.067-34.417,32.067s-34.189-11.258-34.189-32.067V446.838Zm126.126,59.585a15.66,15.66,0,0,1-8.632,2.729c-4.657,0-8.292-3.525-9.314-11.03,10.45-3.3,16.471-11.825,16.471-23.538,0-15.237-9.883-27.746-28.4-27.746h-38.62v79.6h23.854V499.6h5.679c.909,8.187,4.77,28.087,25.443,28.087a35.9,35.9,0,0,0,20.786-6.14Zm-32.372-23.312H912.469V467.306h12.267c4.089,0,7.042,3.867,7.042,8.074C931.778,479.245,928.825,483.111,924.736,483.111Z"
-            transform="translate(-636.258 -441.92)" fill="url(#linear-gradient)" />
-          <path id="G"
-            d="M1120.863,455.48c-7.837-6.14-16.356-9.893-28.4-9.893-26.807,0-44.3,18.876-44.3,41.049s17.492,41.05,44.3,41.05c13.177,0,23.74-5.344,32.259-12.849v-34.8h-39.188v17.171h16.47v8.755a35.492,35.492,0,0,1-9.541,1.251c-12.381,0-20.446-9.1-20.446-20.581s8.066-20.581,20.446-20.581c4.77,0,10.223.8,15.107,4.89Z"
-            transform="translate(-694.464 -441.92)" fill="#fff" />
-          <g id="Group_11" data-name="Group 11" transform="translate(441.559)">
-            <g id="Group_8" data-name="Group 8" transform="translate(0 5.06)">
-              <path id="Path_20" data-name="Path 20" d="M1200.923,447.208h0Z" transform="translate(-1157.608 -447.208)"
-                fill="#fff" />
-              <path id="Path_21" data-name="Path 21"
-                d="M1236.586,491.8c.039-.416.073-.834.1-1.253.018-.282.028-.566.041-.849.012-.314.028-.626.034-.941.01-.629.009-1.261-.011-1.9-.02-.619-.059-1.232-.107-1.843-.014-.17-.029-.339-.045-.51q-.067-.732-.161-1.457c-.017-.133-.031-.267-.05-.4q-.124-.879-.286-1.745c-.03-.162-.064-.321-.1-.481q-.131-.655-.283-1.3c-.044-.187-.087-.374-.133-.56-.138-.549-.284-1.1-.445-1.636-.039-.133-.085-.264-.126-.4q-.2-.634-.413-1.261-.112-.322-.229-.643-.2-.543-.415-1.079c-.076-.189-.148-.379-.226-.567q-.3-.725-.635-1.433c-.106-.23-.219-.457-.331-.685q-.212-.435-.436-.864c-.122-.235-.243-.469-.369-.7q-.321-.588-.66-1.164c-.163-.277-.332-.549-.5-.823-.158-.254-.318-.508-.481-.758s-.318-.482-.481-.72c-.045-.065-.087-.132-.131-.2l-.01,0a43.087,43.087,0,0,0-26.6-17.449l-.016-.009-.021-.009c-.1-.021-.194-.033-.29-.052q-.988-.2-1.992-.355c-.142-.022-.282-.05-.423-.07q-1.222-.179-2.464-.291c-.181-.016-.364-.024-.545-.039q-.962-.075-1.935-.111c-.274-.01-.549-.015-.823-.02s-.527-.018-.792-.018v.021h0v-.021h0c-.5,0-1,.008-1.5.024q-1.128.036-2.242.128h0a43.8,43.8,0,0,0-30.971,16.425l-.005.007q-.6.761-1.158,1.547l-.025.035q-.55.774-1.064,1.571l-.041.066q-.5.785-.971,1.591c-.019.033-.036.066-.055.1q-.457.8-.88,1.613c-.02.037-.037.076-.056.113-.278.544-.546,1.093-.8,1.65-.015.031-.026.062-.04.093-.257.567-.5,1.14-.732,1.719l0,0h0a39.187,39.187,0,0,0-2.753,15.763,40.343,40.343,0,0,0,18.259,32.217l0,.007c.161.107.328.209.49.315.28.181.558.365.843.541.181.112.367.217.55.326q1.022.611,2.084,1.169c.108.057.215.117.326.173.4.2.8.4,1.2.591.123.059.246.118.369.175q.637.3,1.286.572l.244.1a44.692,44.692,0,0,0,17.3,3.464c.5,0,1-.009,1.5-.025,21.377-.693,38.632-16.069,41.414-35.595h0c.07-.485.127-.972.178-1.461C1236.559,492.084,1236.573,491.942,1236.586,491.8Zm-15.2,20.857a38.873,38.873,0,0,1-26.6,11.471c-.444.015-.888.022-1.329.022a39.943,39.943,0,0,1-11.3-1.627l-6.241-4.8a2.475,2.475,0,0,0-1.59-.512l-3.127.1a37.768,37.768,0,0,1-4.141-3.3,34.694,34.694,0,0,1-11.4-24.514,34.137,34.137,0,0,1,.987-9.321l6.471,8.086a2.475,2.475,0,0,0,2.014.928l11.155-.361a2.479,2.479,0,0,1,2.556,2.4l.568,17.542a2.483,2.483,0,0,0,1,1.914l4.071,3.018a2.478,2.478,0,0,0,3.951-2.073l-.24-7.423a2.809,2.809,0,0,1,1.409-2.467l9.255-6.63a2.482,2.482,0,0,0,.428-3.891l-11.331-13.528a2.48,2.48,0,0,1-.75-1.7l-1.522-3.394a2.478,2.478,0,0,1,2.4-2.559,2.481,2.481,0,0,0,1.851-4.033l-3.717-4.63a3.017,3.017,0,0,0-2.417-1.112l-14.409.467a38.95,38.95,0,0,1,20.79-8.187l.522.257a2.45,2.45,0,0,1,.555.374l4.286,3.821a2.475,2.475,0,0,0,3.232.055l4.31-3.589a38.3,38.3,0,0,1,16.771,8.754,3.022,3.022,0,0,0-1.742.431l-14.458,9.683a2.481,2.481,0,0,0-.876,3.323l4.64,7.666a2.476,2.476,0,0,0,1.643,1.219l7.257,1.753c1.338.289,3.905,1.608,3.617,2.948l-3.33,15.454a2.478,2.478,0,0,0,3.209,2.875l7.3-2.449A36.384,36.384,0,0,1,1221.387,512.656Z"
-                transform="translate(-1150.48 -447.208)" fill="#fff" />
-            </g>
-            <g id="Group_10" data-name="Group 10" transform="translate(61.349)">
-              <g id="Group_9" data-name="Group 9" transform="translate(18.228)">
-                <path id="Path_22" data-name="Path 22"
-                  d="M1266.834,453.823l-23.682,14.211,23.621.275a7.362,7.362,0,0,0,6.582-3.9l1.213-2.276a3.686,3.686,0,0,0-1.514-4.987Z"
-                  transform="translate(-1243.152 -443.076)" fill="#f09819" />
-                <path id="Path_23" data-name="Path 23"
-                  d="M1263.157,441.322h-2.578a7.36,7.36,0,0,0-6.536,3.972l-10.891,20.986,23.682-14.212,0-7.059a3.682,3.682,0,0,0-3.679-3.687Z"
-                  transform="translate(-1243.152 -441.321)" fill="#ff512f" />
-              </g>
-              <path id="Path_24" data-name="Path 24"
-                d="M1224.624,481.7a2.7,2.7,0,0,1-1.389-5.021l10.225-6.055a2.345,2.345,0,0,1,.3-.145l5.252-3.154.469.681c.708,1.029,1.383,2.1,2.006,3.169l.416.716-.825.5c-7.227,4.324-8.569,5.121-8.851,5.283l-6.218,3.65a2.684,2.684,0,0,1-1.379.381Z"
-                transform="translate(-1221.924 -444.97)" fill="#ff512f" />
-              <path id="Path_25" data-name="Path 25"
-                d="M1268.85,452.034a2.7,2.7,0,0,0-3.7-.93l-23.359,13.911c.273.367.548.733.808,1.109l.01,0c.045.065.087.132.131.2.163.238.323.479.481.72s.323.5.481.758c.169.273.338.546.5.823.18.306.354.616.526.928l23.194-13.814a2.7,2.7,0,0,0,.927-3.707Z"
-                transform="translate(-1224.731 -442.64)" fill="#fff" />
-            </g>
-          </g>
+<body style="background-color: #fafafa;">
+  <table class="container" style="
+  width: 600px;
+  margin-left: auto;
+  margin-right: auto;
+  background-color: #ffffff;   
+  border-spacing: 0;   
+  border-collapse: separate;
+  ">
+    <tbody>
+      <tr class="headerRow"
+      style="
+      width: 100%;
+      background-color: #00609B;
+      "
+      >
+        <td height="200">
+          <table class="innerTable" style="
+          width: 100%;
+          height: 100%;
+          border-spacing: 0;   
+          border-collapse: separate;
+          ">
+            <tbody>
+              <tr>
+                <td style="padding: 40px">
+                  <table class="innerTable" style="
+                  width: 100%;
+                  height: 100%;
+                  border-spacing: 0;   
+                  border-collapse: separate;
+                  ">
+                    <tbody>
+                      <tr>
+                        <td height="100">
+                          <img src="/img/png/MainLOGO@2x.png" alt="Logo"
+                            style="display: block; max-width: 100%; max-height:100%;" />
+                        </td>
+                      </tr>
+                      <tr>
+                        <td height="50" style="
+                          font-size: 18px; 
+                          font-family: 'Montserrat', sans-serif; 
+                          font-weight: 400; color: #ffffff; 
+                          text-align: left; vertical-align: bottom;
+                          padding-left: 10px;
+                          ">
+                          A BIG HELLO AND
+                        </td>
+                      </tr>
+                      <tr>
+                        <td height="50" style="
+                          font-size: 35px; 
+                          font-family: 'Montserrat', sans-serif; 
+                          font-weight: 800; color: #ffffff; 
+                          text-align: left; 
+                          vertical-align: top;
+                          padding-left: 10px;
+                          line-height: 28px;
+                          ">
+                          WELCOME!
+                        </td>
+                      </tr>
 
-          <!--FALLBACK for email clients not able to handle svg-->
-          <image src="" xlink:href="null">
-        </svg>
+                    </tbody>
+                  </table>
+                </td>
+                <td class="illustration" 
+                style="
+                padding-right: 40px; 
+                text-align: right;
+                vertical-align: bottom;
+                width: 40%;
+                ">
+                  <img src="/img/png/tourgoers.png" alt="Logo"
+                    style="display: block; width: 100%; height:auto; margin-bottom: -40px;" />
+                </td>
+              </tr>
+            </tbody>
+          </table>
+        </td>
+      </tr>
+      <tr height="50"></tr>
+      <tr class="contentRow">
+        <td>
+          <table class="innerTable" style="
+          width: 100%;
+          height: 100%;
+          padding: 40px; padding-top: 30px;
+          border-spacing: 0;   
+          border-collapse: separate;
+          ">
 
-        <h2 style="margin:0; mso-line-height-rule:exactly;">A Big Hello And</h2>
-        <h1 style="margin:0; mso-line-height-rule:exactly;">Welcome!</h1>
-      </div>
-      <div class="right">
-        <svg class="illustration" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
-          width="148.071" height="126.554" viewbox="0 0 148.071 126.554">
-          <defs>
-            <linearGradient id="linear-gradient" x1="1" y1="0.5" x2="0" y2="0.5" gradientUnits="objectBoundingBox">
-              <stop offset="0" stop-color="#ff512f" />
-              <stop offset="1" stop-color="#f09819" />
-            </linearGradient>
-            <linearGradient id="linear-gradient-3" x1="1" y1="0.5" x2="0" y2="0.5" gradientUnits="objectBoundingBox">
-              <stop offset="0" stop-color="#00609b" />
-              <stop offset="0.813" stop-color="#0c4572" />
-              <stop offset="1" stop-color="#103f69" />
-            </linearGradient>
-          </defs>
-          <g id="tourgoers_activities" transform="translate(0 0)">
-            <g id="Group_55" data-name="Group 55" transform="translate(100.168 1.751)">
-              <g id="Group_54" data-name="Group 54" transform="translate(0 0)">
-                <path id="Path_240" data-name="Path 240"
-                  d="M233.877,880.775a15.011,15.011,0,0,1-3.552,1.257c-1.463.209-2.286-1.274-1.979-1.79s-.947-.1-1.783,1.79c0,0-3.552,4.19-5.642,4.4s-2.106,3.046-1.045,3.142c1.149.1,3.134.838,5.642,0s4.806-3.142,5.851-3.142,4.6-1.676,3.552-2.514S233.877,880.775,233.877,880.775Z"
-                  transform="translate(-191.649 -767.393)" fill="#3f3d56" />
-                <path id="Path_241" data-name="Path 241"
-                  d="M326.233,894.144a11.573,11.573,0,0,1-3.188-.2c-1.436-.35-1.651-2.033-1.175-2.4s-.844-.442-2.318,1c0,0-4.85,2.569-6.867,1.986s-3.083,2.044-2.134,2.529a12.082,12.082,0,0,0,5.234,1.481c2.638.155,5.631-.51,6.6-.122s4.889.155,4.229-1.012A6.493,6.493,0,0,1,326.233,894.144Z"
-                  transform="translate(-304.599 -776.029)" fill="#3f3d56" />
-                <ellipse id="Ellipse_44" data-name="Ellipse 44" cx="8.149" cy="8.17" rx="8.149" ry="8.17"
-                  transform="translate(17.037 1.845)" fill="#ffc1c7" />
-                <path id="Path_242" data-name="Path 242"
-                  d="M274.538,455.59s-1.254,8.8,1.672,10.056-14.836.838-14.836.838,2.507-7.961,1.881-10.056S274.538,455.59,274.538,455.59Z"
-                  transform="translate(-242.979 -442.328)" fill="#ffc1c7" />
-                <path id="Path_243" data-name="Path 243"
-                  d="M249.987,665.177s.627,15.922,1.254,17.6,1.254,12.989,1.254,12.989l5.433,20.531-5.015,1.676s-6.9-12.151-7.731-13.617-7.522-24.93-7.522-24.93.627,14.455.627,19.274-1.254,22.416-1.254,22.416l-3.97-.419-5.224-22.206s-7.522-29.958-2.507-33.31S249.987,665.177,249.987,665.177Z"
-                  transform="translate(-215.503 -601.845)" fill="#2f2e41" />
-                <path id="Path_244" data-name="Path 244" d="M372.807,688.03s-.209,12.151,2.3,10.265,0-11.313,0-11.313Z"
-                  transform="translate(-368.829 -619.67)" fill="#ffc1c7" />
-                <path id="Path_245" data-name="Path 245" d="M225.093,670.187s-.209,12.151,2.3,10.265,0-11.313,0-11.313Z"
-                  transform="translate(-186.43 -606.017)" fill="#ffc1c7" />
-                <path id="Path_246" data-name="Path 246"
-                  d="M220.283,508.99s4.179-4.818,7.731-4.19,22.985.419,22.985.419,6.478,8.17,4.806,9.846-7.1,31.424-7.1,31.424-14.418-1.885-19.432-1.885-7.1-.838-7.1-.838,6.687-13.408,3.552-19.483a124.612,124.612,0,0,0-7.731-12.57Z"
-                  transform="translate(-212.335 -480.225)" fill="url(#linear-gradient)" />
-                <path id="Path_247" data-name="Path 247"
-                  d="M350.288,529.072l-3.552,1.257a58.237,58.237,0,0,0-2.09,13.2c0,5.866-.209,8.8-1.045,10.894s-3.552,11.941-2.09,14.036a13.962,13.962,0,0,0,2.925,3.142l4.806-.419s.209-6.913,1.462-7.542,2.925-4.609,2.925-4.609,3.97-12.779,1.463-16.969S350.288,529.072,350.288,529.072Z"
-                  transform="translate(-341.088 -498.841)" fill="url(#linear-gradient)" />
-                <path id="Path_248" data-name="Path 248"
-                  d="M208.385,533.366s-2.089-9.218,1.881-8.8,9.4.628,10.865.628,9.821-1.048,11.074,4.4,2.925,12.151-.627,16.34c0,0-1.254,18.436-6.06,19.693s-17.552,2.724-22.149-3.352a15.659,15.659,0,0,1-2.716-12.779h2.09Z"
-                  transform="translate(-185.811 -495.383)" fill="url(#linear-gradient-3)" />
-                <path id="Path_249" data-name="Path 249" d="M339.177,595.7l-1.671-11.313.836,11.732Z"
-                  transform="translate(-323.499 -541.165)" fill="#3f3d56" />
-                <path id="Path_250" data-name="Path 250" d="M229.133,621.855s-3.552,1.676-10.865.629v3.142l10.865-.838Z"
-                  transform="translate(-185.455 -569.836)" opacity="0.1" style="isolation: isolate" />
-                <path id="Path_251" data-name="Path 251" d="M305.12,514.608l-5.433-2.933,4.6,3.98Z"
-                  transform="translate(-280.561 -485.529)" fill="#3f3d56" />
-                <path id="Path_252" data-name="Path 252"
-                  d="M236.848,488.271s-4.179,1.466-4.179,0,3.761-2.723,6.06-3.561,13.164-2.1,14.836-2.723,9.612-1.676,10.239.838.836,7.751-2.3,8.38-11.283-1.047-15.463-.628S236.848,488.271,236.848,488.271Z"
-                  transform="translate(-223.886 -462.23)" fill="url(#linear-gradient)" />
-                <path id="Path_253" data-name="Path 253" d="M226.613,521.557l-1.42-2.991-.252,3.619Z"
-                  transform="translate(-184.502 -490.802)" fill="#3f3d56" />
-                <ellipse id="Ellipse_45" data-name="Ellipse 45" cx="7.629" cy="8.887" rx="7.629" ry="8.887"
-                  transform="translate(18.969 0.675)" fill="#2f2e41" />
-                <ellipse id="Ellipse_46" data-name="Ellipse 46" cx="7.629" cy="4.837" rx="7.629" ry="4.837"
-                  transform="translate(17.622)" fill="#2f2e41" />
-                <ellipse id="Ellipse_47" data-name="Ellipse 47" cx="0.785" cy="1.35" rx="0.785" ry="1.35"
-                  transform="translate(18.52 10.799)" fill="#ffc1c7" />
-                <path id="Path_254" data-name="Path 254"
-                  d="M321.937,408.055a4.985,4.985,0,0,1-2-2.324,2.457,2.457,0,0,0-.04.736,2.77,2.77,0,0,1-.956-.289l.072.784a8.072,8.072,0,0,1-1.577-1.266,6.24,6.24,0,0,0,.552,3.343,6.675,6.675,0,0,0,1.542,1.888"
-                  transform="translate(-301.537 -404.435)" fill="#2f2e41" />
-                <path id="Path_255" data-name="Path 255"
-                  d="M236.848,488.271s-4.179,1.466-4.179,0,3.761-2.723,6.06-3.561,13.164-2.1,14.836-2.723,9.612-1.676,10.239.838.836,7.751-2.3,8.38-11.283-1.047-15.463-.628S236.848,488.271,236.848,488.271Z"
-                  transform="translate(-223.886 -462.23)" opacity="0.1" style="isolation: isolate" />
-              </g>
-            </g>
-            <g id="Group_57" data-name="Group 57">
-              <ellipse id="Ellipse_50" data-name="Ellipse 50" cx="7.293" cy="5.689" rx="7.293" ry="5.689"
-                transform="translate(24.579 1.363)" fill="#3f3d56" />
-              <circle id="Ellipse_51" data-name="Ellipse 51" cx="10.503" cy="10.503" r="10.503"
-                transform="translate(35.956 15.803)" fill="#3f3d56" />
-              <rect id="Rectangle_23" data-name="Rectangle 23" width="10.503" height="13.42"
-                transform="translate(39.165 51.542)" fill="#fbbebe" />
-              <rect id="Rectangle_24" data-name="Rectangle 24" width="3.209" height="6.419"
-                transform="translate(53.753 47.749)" fill="#fbbebe" />
-              <path id="Path_275" data-name="Path 275"
-                d="M8490.787,2170.76l-1.313,3.939s-.583,2.917,1.313,3.062a24.536,24.536,0,0,0,4.963-.438,4.2,4.2,0,0,0,0-2.479c-.439-1.167-1.751-4.376-1.751-4.376Z"
-                transform="translate(-8450.235 -2053.941)" fill="#3c354c" />
-              <path id="Path_276" data-name="Path 276"
-                d="M8546.278,2172.849s-2.041,5.106-.437,5.981,3.793.146,5.543.875,6.565-1.02,6.565-1.02.583-1.6-2.627-2.042c0,0-3.491-2.626-3.491-3.209s-2.041-.585-2.041-.585Z"
-                transform="translate(-8495.81 -2055.885)" fill="#3c354c" />
-              <path id="Path_277" data-name="Path 277"
-                d="M8475.693,1854.943s-11.961,2.479-13.418,1.75-2.917,9.926-2.917,9.926a51.567,51.567,0,0,0,1.456,15.024c2.044,8.606,0,12.837,0,12.837s.295,8.168,2.481,11.962a16.058,16.058,0,0,1,2.188,7.293s4.228.437,4.378-.584a19.461,19.461,0,0,1-1.459-7.876c.291-3.792-.876-11.088-.876-11.088s1.9-9.19,1.6-12.683,1.022-10.94,1.749-9.628a42.3,42.3,0,0,1,2.627,9.045c0,1.314.737,10.063,1.169,10.648s.289,2.334.143,3.209a53.329,53.329,0,0,0,.583,10.94c.729,3.5.148,7.439.293,8.023s4.377.145,4.522-.876c0,0,.584-6.272.876-7.147s.431-11.977.431-11.977.291-8.606.582-9.481.735-19.693-1.167-21.873-1.167-7.731-1.167-7.731Z"
-                transform="translate(-8425.66 -1796.179)" fill="#3f3d56" />
-              <path id="Path_278" data-name="Path 278"
-                d="M8487.324,1699.608a18.237,18.237,0,0,0-1.421,3.151,6.038,6.038,0,0,0-.14,3.411,8.381,8.381,0,0,0,.943,1.967,6.7,6.7,0,0,0,1.188,1.588,7.161,7.161,0,0,0,4.193,1.367,2.12,2.12,0,0,0,.77-.013,1.449,1.449,0,0,0,.553-.3,4.375,4.375,0,0,0,1.188-2.206,36.582,36.582,0,0,0,1.218-5.908,2.856,2.856,0,0,0,0-.956,4.82,4.82,0,0,0-.892-1.454,3.7,3.7,0,0,1-.633-1.912,1.562,1.562,0,0,0-.208-.954,1.31,1.31,0,0,0-.5-.3c-.869-.368-1.736-.736-2.608-1.088-.526-.217-1.47-.794-2.022-.367-.472.367-.243,1.22-.446,1.731A24.28,24.28,0,0,1,8487.324,1699.608Z"
-                transform="translate(-8447.125 -1666.255)" fill="#fbbebe" />
-              <path id="Path_279" data-name="Path 279"
-                d="M8487.324,1699.608a18.237,18.237,0,0,0-1.421,3.151,6.038,6.038,0,0,0-.14,3.411,8.381,8.381,0,0,0,.943,1.967,6.7,6.7,0,0,0,1.188,1.588,7.161,7.161,0,0,0,4.193,1.367,2.12,2.12,0,0,0,.77-.013,1.449,1.449,0,0,0,.553-.3,4.375,4.375,0,0,0,1.188-2.206,36.582,36.582,0,0,0,1.218-5.908,2.856,2.856,0,0,0,0-.956,4.82,4.82,0,0,0-.892-1.454,3.7,3.7,0,0,1-.633-1.912,1.562,1.562,0,0,0-.208-.954,1.31,1.31,0,0,0-.5-.3c-.869-.368-1.736-.736-2.608-1.088-.526-.217-1.47-.794-2.022-.367-.472.367-.243,1.22-.446,1.731A24.28,24.28,0,0,1,8487.324,1699.608Z"
-                transform="translate(-8447.125 -1666.255)" opacity="0.1" style="isolation: isolate" />
-              <circle id="Ellipse_54" data-name="Ellipse 54" cx="5.106" cy="5.106" r="5.106"
-                transform="translate(40.842 23.462)" fill="#fbbebe" />
-              <path id="Path_280" data-name="Path 280"
-                d="M8490.482,1756.908a10.006,10.006,0,0,1-2.993.684,9.9,9.9,0,0,1-2.288-.245,29.147,29.147,0,0,1-4.556-1.3,4.874,4.874,0,0,0-.427,2.033,54.967,54.967,0,0,0,.5,6.316c.2,2.68,0,5.418.688,8.014a2.192,2.192,0,0,1,.493-1.2,2.722,2.722,0,0,1,.824-.607,6.58,6.58,0,0,1,4.519-.562,4.4,4.4,0,0,0,2.661.25,2.6,2.6,0,0,0,1.141-1.123,9.235,9.235,0,0,0,1-2.7,38.134,38.134,0,0,0,.691-7.446c.019-.667.306-2.651-.248-3.139-.386-.34-.5.145-.781.4A3.582,3.582,0,0,1,8490.482,1756.908Z"
-                transform="translate(-8442.743 -1715.462)" fill="#f2f2f2" />
-              <path id="Path_281" data-name="Path 281"
-                d="M8460.115,1713.559a1.1,1.1,0,0,0-1.218.042c-.374.226-.677.539-1.059.744-1.055.572-2.471.153-3.473.818-.943.627-1.1,1.917-1.177,3.046a48.475,48.475,0,0,1-1.032,8.545,6.858,6.858,0,0,0-.336,2.246,6.09,6.09,0,0,0,.308,1.268l.9,2.825a15.065,15.065,0,0,1,.888,4.022,14.756,14.756,0,0,1-.6,4,46.708,46.708,0,0,0-1.235,7.887,5.524,5.524,0,0,0,.274,2.606,4.534,4.534,0,0,0,1.9,1.947c.785.476,1.642.844,2.411,1.349,1.545,1.016,2.786,2.618,4.595,3.035a6.253,6.253,0,0,0,2.532-.052s-.473-21.454-1.787-24.518-2.479-16.337-2.479-16.774S8460.115,1713.559,8460.115,1713.559Z"
-                transform="translate(-8419.562 -1680.879)" fill="#f09819" />
-              <path id="Path_282" data-name="Path 282"
-                d="M8528.031,1718.118s6.9,0,7.926,3.647-2.919,9.628-2.919,9.628,1.6,11.815,2.332,12.982.44,3.492.44,3.492a9.668,9.668,0,0,1,.289,4.963,48.933,48.933,0,0,1-2.771,7.294s-2.917,0-3.646,1.75-.875-7.586-.875-7.586-2.626-17.066-2.479-18.086.875-9.482,1.166-11.817S8528.422,1718.993,8528.031,1718.118Z"
-                transform="translate(-8480.38 -1684.736)" fill="#f09819" />
-              <path id="Path_283" data-name="Path 283"
-                d="M8559.064,1730.818s3.354,1.02,3.354,2.187,1.029,7.439,1.029,9.481-.438,2.335,0,3.064-4.668.437-4.668.437l-.927-8.313Z"
-                transform="translate(-8506.113 -1695.102)" fill="#f09819" />
-              <path id="Path_284" data-name="Path 284"
-                d="M8453.926,1785.063s6.564.438,7.732-.439,6.127,1.167,6.563,2.334-7,1.313-8.167,1.313-6.711,1.751-6.711,1.751Z"
-                transform="translate(-8420.814 -1738.844)" fill="#a0616a" />
-              <path id="Path_285" data-name="Path 285"
-                d="M8374.42,2154.8s-3.061,7.72-1.471,8.639,18.355.264,18.355.264,2.792-1.728-.4-2.926a10.942,10.942,0,0,1-4.389-1.2,25.563,25.563,0,0,1-3.727-3.058s-.132-2.927-1.2-2.261a2.732,2.732,0,0,0-1.2,1.862Z"
-                transform="translate(-8354.824 -2040.632)" fill="#3f3d56" />
-              <path id="Path_286" data-name="Path 286"
-                d="M8374.42,2154.8s-3.061,7.72-1.471,8.639,18.355.264,18.355.264,2.792-1.728-.4-2.926a10.942,10.942,0,0,1-4.389-1.2,25.563,25.563,0,0,1-3.727-3.058s-.132-2.927-1.2-2.261a2.732,2.732,0,0,0-1.2,1.862Z"
-                transform="translate(-8354.824 -2040.632)" opacity="0.1" style="isolation: isolate" />
-              <path id="Path_287" data-name="Path 287"
-                d="M8347.92,2167.377s-3.354,8.455-1.6,9.48,20.129.292,20.129.292,3.065-1.9-.437-3.209a12.02,12.02,0,0,1-4.814-1.312,27.787,27.787,0,0,1-4.084-3.36s-.145-3.209-1.311-2.479a2.986,2.986,0,0,0-1.313,2.042Z"
-                transform="translate(-8333.049 -2050.85)" fill="#3f3d56" />
-              <path id="Path_288" data-name="Path 288"
-                d="M8397.819,1862.26l-2.043,18.381s-.734,8.753-2.916,10.648c0,0,0,2.772-.736,3.647l-1.022,11.524s1.46,4.227,1.315,4.963.582,3.062.438,3.354-7,0-7,0l1.458-23.485,4.521-32.673Z"
-                transform="translate(-8365.729 -1799.412)" fill="#3c354c" />
-              <path id="Path_289" data-name="Path 289"
-                d="M8397.819,1862.26l-2.043,18.381s-.734,8.753-2.916,10.648c0,0,0,2.772-.736,3.647l-1.022,11.524s1.46,4.227,1.315,4.963.582,3.062.438,3.354-7,0-7,0l1.458-23.485,4.521-32.673Z"
-                transform="translate(-8365.729 -1799.412)" opacity="0.1" style="isolation: isolate" />
-              <path id="Path_290" data-name="Path 290"
-                d="M8360.555,1858.377s-1.605,15.025-2.336,18.234a41.672,41.672,0,0,0-.874,6.418s-.145,4.669-1.461,5.981a3.948,3.948,0,0,0-1.165,2.913s-1.312,14.732-.583,16.484,1.459,3.209.736,4.375-8.754,1.167-8.754.292,0-1.6-.437-2.042,0-3.21,0-3.21-1.751-12.983-.146-16.774,2.334-14.153,2.334-14.153-1.167-11.815-2.626-13.712.292-8.606.292-8.606Z"
-                transform="translate(-8332.11 -1796.114)" fill="#3c354c" />
-              <path id="Path_291" data-name="Path 291"
-                d="M8408.783,1602.776a1.953,1.953,0,0,0,.944.8,28.242,28.242,0,0,1,5.7,4.582,6.7,6.7,0,0,1,.266-4.527,2.324,2.324,0,0,0,.337-1.522,1.964,1.964,0,0,0-.734-.886,23.153,23.153,0,0,0-2.255-1.539c-.553-.327-1.67-1.2-2.3-1.1a5.775,5.775,0,0,1-.422,2.389C8410.229,1601.172,8408.848,1602.923,8408.783,1602.776Z"
-                transform="translate(-8384.445 -1587.17)" fill="#a0616a" />
-              <circle id="Ellipse_55" data-name="Ellipse 55" cx="5.981" cy="5.981" r="5.981"
-                transform="translate(25.817 5.519)" fill="#a0616a" />
-              <path id="Path_292" data-name="Path 292"
-                d="M8356.479,1628.767s1.021-5.106-1.9-6.856-6.271-3.792-6.271-3.792-1.022-.147-1.458,2.042c0,0-8.314,1.6-9.191,9.481s.584,19.4.584,19.4-1.312,10.065-2.917,15.462c0,0-1.314,1.167,4.521-.583s16.044,4.963,16.044,4.963,1.023-1.022,1.023-1.752,1.167-4.963,1.167-4.963,1.021-17.941,1.457-19.983S8357.792,1629.059,8356.479,1628.767Z"
-                transform="translate(-8324.388 -1603.116)" fill="#3f3d56" />
-              <path id="Path_293" data-name="Path 293"
-                d="M8360.953,1647.322s8.021-4.669,6.416-10.65-5.1-7.876-5.1-7.876-5.689-1.9-10.5,4.228l.294,2.772s5.251-10.648,10.939-3.939S8360.953,1647.322,8360.953,1647.322Z"
-                transform="translate(-8337.904 -1611.605)" fill="#f09819" />
-              <path id="Path_294" data-name="Path 294"
-                d="M8290.844,1654.316v23.918l-1.489,8.16-.7,3.8h-5.1l-7.146-2.627v-17.645s5.978-11.817,7.876-14S8290.844,1654.316,8290.844,1654.316Z"
-                transform="translate(-8276.405 -1632.604)" fill="#f09819" />
-              <path id="Path_295" data-name="Path 295" d="M8289.319,1829.158l-.693,3.8h-5.106l-7.146-2.625Z"
-                transform="translate(-8276.373 -1775.366)" opacity="0.1" style="isolation: isolate" />
-              <path id="Path_296" data-name="Path 296" d="M8345.412,1733.426l12.547-15.317-11.089,15.9-1.166.291Z"
-                transform="translate(-8332.723 -1684.729)" fill="#f09819" />
-              <path id="Path_297" data-name="Path 297"
-                d="M8412.645,1548.62a2.484,2.484,0,0,1,1.174-.312,2.218,2.218,0,0,0,1.16-.345c.563-.434.607-1.272,1.019-1.851a3.194,3.194,0,0,1,2.823-.9,3.127,3.127,0,0,0,1.838-.276,2.813,2.813,0,0,0,.974-1.631,2.193,2.193,0,0,0-.183-2.176c-.369-.378-.965-.454-1.381-.787a3.785,3.785,0,0,1-.841-1.4,3.8,3.8,0,0,0-1.222-1.531,4.623,4.623,0,0,0-2.737-.657,21.472,21.472,0,0,1-2.857.019,8.778,8.778,0,0,0-2.322-.239,3.324,3.324,0,0,0-2.287,1.759,9.8,9.8,0,0,0-.895,2.836l-.551,2.652a7.023,7.023,0,0,0-.211,2.5c.272,1.72,1.794,3.088,1.9,4.825a2.957,2.957,0,0,1,1.809-2.149.571.571,0,0,1,.366-.046c.15.05.239.2.334.327.25.333,1.035.836,1.471.6C8412.441,1549.622,8412.145,1548.96,8412.645,1548.62Z"
-                transform="translate(-8382.255 -1536.503)" fill="#3f3d56" />
-              <path id="Path_299" data-name="Path 299"
-                d="M8359.221,1743.985s-1.021,6.417,3.208,5.834c0,0,2.188-.292,2.481,0s11.085-1.6,12.542-3.209c0,0,1.752-.583,2.626.292s9.629,1.75,7-.876a13.334,13.334,0,0,0-6.71-3.209l-5.543.29s-2.917.876-4.667,0-6.714-.574-6.714-.574Z"
-                transform="translate(-8343.904 -1704.622)" fill="#a0616a" />
-              <path id="Path_300" data-name="Path 300"
-                d="M8363.088,1640.348s-6.565.735-6.565,10.211v12.105s3.647-1.6,4.376-1.459,3.647-1.9,3.647-1.9,3.354-7.874,3.061-10.061S8367.464,1640.638,8363.088,1640.348Z"
-                transform="translate(-8341.79 -1621.26)" fill="#3f3d56" />
-              <path id="Path_301" data-name="Path 301" d="M8526.565,1768.109l-6.563,4.669,4.084.437,5.688-4.814Z"
-                transform="translate(-8475.221 -1725.538)" fill="#3f3d56" />
-              <path id="Path_302" data-name="Path 302"
-                d="M8545.152,1786.1s1.605,4.963-.582,6.418-5.834-5.106-5.834-5.106-3.941-4.667-1.314-5.689,3.7,3.428,3.7,3.428l3.446,2.99Z"
-                transform="translate(-8488.701 -1736.524)" fill="#fbbebe" />
-              <ellipse id="Ellipse_58" data-name="Ellipse 58" cx="5.834" cy="3.72" rx="5.834" ry="3.72"
-                transform="translate(40.625 21.054)" fill="#3f3d56" />
-              <circle id="Ellipse_59" data-name="Ellipse 59" cx="4.229" cy="4.229" r="4.229"
-                transform="translate(43.25 11.575)" fill="#3f3d56" />
-              <ellipse id="Ellipse_60" data-name="Ellipse 60" cx="5.615" cy="2.917" rx="5.615" ry="2.917"
-                transform="translate(26.183 4.865)" fill="#3f3d56" />
-              <ellipse id="Ellipse_61" data-name="Ellipse 61" cx="1.969" cy="4.887" rx="1.969" ry="4.887"
-                transform="translate(24.579 3.403)" fill="#3f3d56" />
-            </g>
-          </g>
+            <tr>
+              <td style="
+              font-size: 14px; 
+              font-family: 'Montserrat', sans-serif; 
+              font-weight: 200; color: #000000; 
+              text-align: left; vertical-align: center;
+              ">
+                We’re so happy you are one of the first <span style="font-weight: 600;">TOURGOers</span> to join us on
+                this journey! With you on our side, we’ll revolutionise the way we see, explore and experience our
+                cities - starting with the UK’s capital, <span>London</span>!💪😎
+              </td>
+            </tr>
 
-          <!--FALLBACK for email clients not able to handle svg-->
-          <image src="" xlink:href="null">
-        </svg>
-      </div>
-    </div>
-    <div class="background"></div>
-  </header>
-  <section>
+            <tr>
+              <td>
+                <table style="
+                border-spacing: 0;   
+                border-collapse: separate;
+                ">
+                  <tbody>
+                    <tr>
+                      <td>
+                        <table style="
+                        border-spacing: 0;   
+                        border-collapse: separate;
+                        ">
+                          <tbody>
+                            <tr>
+                              <td height="140" style="
+                              font-size: 14px; 
+                              font-family: 'Montserrat', sans-serif; 
+                              font-weight: 200; color: #000000; 
+                              text-align: left; vertical-align: middle;
+                              ">
+                                Our goal is to make TOURGO your new favourite app and shape it exactly how you would
+                                like it to be. To do so,
+                                we will need a little of your help…
+                              </td>
+                            </tr>
+                            <tr>
+                              <td height="60" style="
+                              font-size: 14px; 
+                              font-family: 'Montserrat', sans-serif; 
+                              font-weight: 200; color: #000000; 
+                              text-align: left; vertical-align: top;
+                              ">
+                                Make the difference <span style="font-weight: 600;">as a founding member</span> and take
+                                our short survey (2.13 minutes on average!). ✅
+                              </td>
+                            </tr>
+                          </tbody>
+                        </table>
+                      </td>
+                      <td style="padding: 10px; padding-top: 60px; text-align: right; vertical-align: middle;">
+                        <img src="/img/png/london_info.png" alt="London sticker" style="height:180px; width: 180px;" />
+                      </td>
+                    </tr>
+                  </tbody>
+                </table>
+              </td>
+            </tr>
 
-    <p style="margin:2em 0;">
-      We’re so happy you are one of the first <b>TOURGOers</b> to join us on this journey! With you on our side, we’ll
-      revolutionise the way we see, explore and experience our cities - starting with the UK’s capital, <b>London</b>!
-      💪😎
-    </p>
 
-    <div class="tableText">
-      <div>
-        <p style="margin:2em 0;">
-          Our goal is to make TOURGO your new favourite app and shape it exactly how you would like it to be. To do so,
-          we will
-          need
-          a little of your help…
-        </p>
+            <tr>
+              <td height="40" style="
+              text-align: center; 
+              vertical-align: top;
+              padding: 40px;
+              ">
+                <a href="" target="_blank" style=" 
+                font-family: 'Montserrat', sans-serif; 
+                font-size: 16px; 
+                font-weight: 400;
+                font-style: italic;
+                text-align: left; vertical-align: middle;
+                text-transform: uppercase;
+                color: #ffffff;
+                background-color: #FF512F;
+                border-radius: 10px;
+                padding: 16px 40px;
+                text-decoration: none;
+                cursor: pointer;
+                ">
+                  Take The Survey
+                </a>
+              </td>
+            </tr>
 
-        <p style="margin:2em 0;">
-          Make the difference <b>as a founding member</b> and take our short survey (2.13 minutes on average!). ✅
-        </p>
-      </div>
+            <tr>
+              <td height="120" style="
+              font-size: 14px; 
+              font-family: 'Montserrat', sans-serif; 
+              font-weight: 200; color: #000000; 
+              text-align: left; vertical-align: top;
+              ">
+                You will not only contribute in shaping the app, but you will also <span style="font-weight: 600;">gain
+                  your first TOURGO points</span>
+                and the chance to <span style="font-weight: 600;">win 1 of 5 JUST EAT gift cards worth £20</span> 🎯🎁
+                <a class="tandc" href="" style="
+                font-weight: 400;
+                font-style: italic;
+                color: #FF512F;
+                text-decoration: none;
+                cursor: pointer;
+                ">
+                  ( Read terms and conditions )
+                </a>!
+              </td>
+            </tr>
 
-      <svg class="LondonInfo" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
-        width="153.69" height="153.69" viewbox="0 0 153.69 153.69">
-        <defs>
-          <linearGradient id="linear-gradientBox" x1="0.5" x2="1" y2="1" gradientUnits="objectBoundingBox">
-            <stop offset="0" stop-color="#00609b" />
-            <stop offset="0.813" stop-color="#0c4572" />
-            <stop offset="1" stop-color="#103f69" />
-          </linearGradient>
-          <filter id="orangeBg" x="0" y="0" width="153.69" height="153.69" filterUnits="userSpaceOnUse">
-            <feOffset dx="3" dy="3" input="SourceAlpha" />
-            <feGaussianBlur stdDeviation="3" result="blur" />
-            <feFlood flood-opacity="0.161" />
-            <feComposite operator="in" in2="blur" />
-            <feComposite in="SourceGraphic" />
-          </filter>
-        </defs>
-        <g id="submit" transform="matrix(0.966, 0.259, -0.259, 0.966, -151.03, -1790.38)">
-          <g transform="matrix(0.97, -0.26, 0.26, 0.97, 609.27, 1690.28)" filter="url(#orangeBg)">
-            <path id="orangeBg-2" data-name="orangeBg"
-              d="M7,0h96.791a7,7,0,0,1,7,7V92.684L91,110.791H7a7,7,0,0,1-7-7V7A7,7,0,0,1,7,0Z"
-              transform="matrix(0.97, 0.26, -0.26, 0.97, 34.67, 6)" fill="url(#linear-gradientBox)" />
-          </g>
-          <text id="p" transform="translate(699.314 1703.568)" fill="#fff" font-size="10" font-weight="500"
-            letter-spacing="0.05em">
-            <tspan x="-23.69" y="0">LONDON</tspan>
-          </text>
-          <text
-            id="_9_million_people_1_569km2_606_sq_mi_3_Olympic_Games_170_Museums_270_Tube_stations_500_TOURGO_Challenges"
-            data-name="9 million people
-1,569km2   (606 sq mi)
-3 Olympic Games
-170 Museums
-270 Tube stations
-500 TOURGO 
-Challenges" transform="translate(648.314 1711.067)" fill="#fff" font-size="8" font-weight="300" letter-spacing="0.1em">
-            <tspan x="13.053" y="8">9 million people</tspan>
-            <tspan x="1.533" y="19">1,569km</tspan>
-            <tspan y="19" xml:space="preserve" font-size="4.666" baseline-shift="2.66639997471509">2 </tspan>
-            <tspan y="19">(606 sq mi)</tspan>
-            <tspan x="10.713" y="30">3 Olympic Games</tspan>
-            <tspan x="20.313" y="41">170 Museums</tspan>
-            <tspan x="10.289" y="52">270 Tube stations</tspan>
-            <tspan font-weight="700">
-              <tspan x="20.785" y="63">500 TOURGO </tspan>
-              <tspan x="19.805" y="74">CHALLENGES</tspan>
-            </tspan>
-          </text>
-          <path id="orangeBg-3" data-name="orangeBg" d="M7,0,19.747.09l-19.8,18.1L0,7A7,7,0,0,1,7,0Z"
-            transform="translate(735.38 1779.691)" fill="url(#linear-gradientBox)" />
-        </g>
-        
-        <!--FALLBACK for email clients not able to handle svg-->
-        <image src="" xlink:href="null">
-      </svg>
-    </div>
+            <tr>
+              <td height="120" style="
+              font-size: 14px; 
+              font-family: 'Montserrat', sans-serif; 
+              font-weight: 200; color: #000000; 
+              text-align: left; vertical-align: top;
+              ">
+                The launch of TOURGO, and our competition, are still pending an official date. But don’t worry,
+                <span style="font-weight: 600;">we’ll notify you</span> via email or social media when the time is fast
+                approaching.
+                In the meantime, follow and engage with us on
+                <a href="https://www.instagram.com/tourgolondon/" target="_blank" style="
+                font-weight: 400;
+                font-style: italic;
+                color: #FF512F;
+                text-decoration: none;
+                cursor: pointer;
+                ">
+                  Instagram
+                </a>
+                and
+                <a href="https://www.facebook.com/Tourgo-APP-108726170790774/" target="_blank" style="
+                font-weight: 400;
+                font-style: italic;
+                color: #FF512F;
+                text-decoration: none;
+                cursor: pointer;
+                ">
+                  Facebook
+                </a>!
+              </td>
+            </tr>
 
-    <div class="btnContainer">
-      <a class="button" href="">Take The Survey</a>
-    </div>
+            <tr>
+              <td height="60" style="
+              font-size: 14px; 
+              font-family: 'Montserrat', sans-serif; 
+              font-weight: 200; color: #000000; 
+              text-align: left; vertical-align: bottom;
+              ">
+                We wish you all the best </br>with your future adventures.
+              </td>
+            </tr>
 
-    <p style="margin:2em 0;">
-      You will not only contribute in shaping the app, but you will also <b>gain your first TOURGO points</b> and the
-      chance to
-      <b>win 1 of 5 JUST EAT gift cards worth £20</b> 🎯🎁<a class="tandc" href=""><i> ( Read terms and conditions )
-        </i></a>!
-    </p>
+            <tr>
+              <td height="40" style="
+              font-size: 14px; 
+              font-family: 'Montserrat', sans-serif; 
+              font-weight: 200; color: #000000; 
+              text-align: left; vertical-align: bottom;
+              ">
+                Thank you very much for joining us,
+              </td>
+            </tr>
+          </table>
+        </td>
+      </tr>
+      <tr class="footerRow">
+        <td>
+          <table style="height: 100%; width: 100%;
+            border-spacing: 0;   
+            border-collapse: separate;
+            ">
+            <tbody>
+              <tr>
+                <td height="10" style="
+                background-color: #F09819; 
+                width: 50%;
+                "></td>
+                <td height="10" style="
+                background-color: #00609B;
+                width: 50%;
+                "></td>
+              </tr>
+              <table width="100%" style="padding: 40px; vertical-align: middle;
+                border-spacing: 0;   
+                border-collapse: separate;
+              ">
+                <tbody>
+                  <tr>
+                    <td>
+                      <table style="border-spacing: 0;   
+                      border-collapse: separate;">
+                        <tbody>
+                          <tr>
+                            <td width="90" height="90" style="
+                            background-color: #00609B;
+                            background-image: url('./img/png/iconLogo.png');
+                            background-repeat: no-repeat;
+                            background-position: top left;
+                            background-size: cover;
+                            border-radius: 20px;
+                            color: #ffffff;
+                            ">
+                            </td>
+                            <td style="padding-left: 40px;">
+                              <table style="border-spacing: 0;   
+                              border-collapse: separate;">
+                                <tbody>
+                                  <tr>
+                                    <td style="
+                                    text-align: left;
+                                    padding-bottom: 5px;
+                                    font-size: 16px; 
+                                    font-family: 'Montserrat', sans-serif; 
+                                    font-weight: 800; color: #000000; 
+                                    text-align: left; 
+                                    vertical-align: center;
+                                    ">
+                                      <a>TOURGO TEAM</a>
+                                    </td>
+                                  </tr>
+                                  <tr>
+                                    <td style="
+                                    text-align: left;
+                                    font-size: 11px; 
+                                    padding-bottom: 0; 
+                                    font-family: 'Montserrat', sans-serif; 
+                                    font-weight: 400;; 
+                                    text-align: left; 
+                                    vertical-align: center;
+                                    ">
+                                      <a href="mailto:company@tourgoapp.com" style="
+                                      cursor: pointer;
+                                      text-decoration: none;
+                                      color: #000000;
+                                      ">
+                                        company@tourgo.com
+                                      </a>
+                                    </td>
+                                  </tr>
+                                  <tr>
+                                    <td style="
+                                    text-align: left;
+                                    font-size: 11px; 
+                                    padding-bottom: 0;  
+                                    font-family: 'Montserrat', sans-serif; 
+                                    font-weight: 400;; 
+                                    text-align: left; 
+                                    vertical-align: center;
+                                    ">
+                                      <a href="http://tourgoapp.com" target="_blank" style="
+                                      cursor: pointer;
+                                      text-decoration: none;
+                                      color: #000000;
+                                      ">
+                                        www.tougoapp.com
+                                      </a>
+                                    </td>
+                                  </tr>
+                                  <tr>
+                                    <td style="
+                                    text-align: left;
+                                    font-size: 11px; 
+                                    padding-bottom: 0;  
+                                    font-family: 'Montserrat', sans-serif; 
+                                    font-weight: 400;; 
+                                    text-align: left; 
+                                    vertical-align: center;
+                                    ">
+                                      <a href="https://www.facebook.com/Tourgo-APP-108726170790774/" target="_blank" style="
+                                      cursor: pointer;
+                                      text-decoration: none;
+                                      color: #000000;
+                                      ">
+                                        Facebook
+                                      </a>
+                                       | 
+                                      <a href="https://www.instagram.com/tourgolondon/" target="_blank" style="
+                                      cursor: pointer;
+                                      text-decoration: none;
+                                      color: #000000;
+                                      ">
+                                        Instagram
+                                      </a>
+                                    </td>
+                                  </tr>
+                                </tbody>
+                              </table>
+                            </td>
+                          </tr>
+                        </tbody>
+                      </table>
+                    </td>
+                  </tr>
 
-    <p style="margin:2em 0;">
-      The launch of TOURGO, and our competition, are still pending an official date. But don’t worry, <b>we’ll
-        notify you</b> via email or social media when the time is fast approaching.
-      In the meantime, follow and engage with us on <a href="https://www.instagram.com/tourgolondon/"
-        target="_blank"><i>Instagram</i></a> and <a href="https://www.facebook.com/Tourgo-APP-108726170790774/"
-        target="_blank"><i>Facebook</i></a>!
-    </p>
+                </tbody>
+              </table>
+            </tbody>
+          </table>
+        </td>
+      </tr>
+    </tbody>
+  </table>
 
-    <p style="margin:2em 0;">
-      We wish you all the best with your future adventures.
-    </p>
-
-    <p style="margin:2em 0;">
-      Thank you very much for joining us,
-    </p>
-
-  </section>
-  <footer>
-    <div class="footerContent"></div>
-    <div class="signature">
-      <h2>TOURGO TEAM</h2>
-      <a href="mailto:company@tourgoapp.com">company@tourgoapp.com</a>
-      <a href="http://tourgoapp.com" target="_blank">tourgoapp.com</a>
-      <div>
-        <a href="https://www.facebook.com/Tourgo-APP-108726170790774/" target="_blank">
-          <svg id="fb_icon"
-            xmlns="http://www.w3.org/2000/svg" width="40" height="40" viewbox="0 0 19 19">
-            <g class="circle" data-name="Ellipse 74" fill="none" stroke="#000" stroke-width="1">
-              <circle cx="9.5" cy="9.5" r="9.5" stroke="none" />
-              <circle cx="9.5" cy="9.5" r="9" fill="none" />
-            </g>
-            <g id="facebook" transform="translate(6.087 4.167)">
-              <path id="Path_985" data-name="Path 985"
-                d="M27.733,0l-1.41,0a2.476,2.476,0,0,0-2.607,2.675V3.909H22.3a.222.222,0,0,0-.222.222V5.918a.222.222,0,0,0,.222.222h1.417v4.51a.222.222,0,0,0,.222.222h1.849a.222.222,0,0,0,.222-.222V6.139h1.657a.222.222,0,0,0,.222-.222V4.13a.222.222,0,0,0-.222-.222H26.009V2.863c0-.5.12-.758.774-.758h.95a.222.222,0,0,0,.222-.222V.224A.222.222,0,0,0,27.733,0Z"
-                transform="translate(-22.077)" />
-            </g>
-            <!--FALLBACK for email clients not able to handle svg-->
-            <image
-              src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABMAAAATCAYAAAByUDbMAAAAAXNSR0IArs4c6QAAAX1JREFUOBGdkztKQ0EUhm9ERaySFWgtFj4qu2gjqCi6A7EK2LgHQQRBBEFX4QMUrKJibbRwAe4gNuIb/T7JhbmTmxv0hy8z5zGTmTn3lJLOWic0CWPQhArcQQP2oU09bZ4kWcT3AcNwDasw0xpvGIfgDeahUDtET6G3MCtJ+omfwVaYF57Mjb5gCT7DpJz5O74F6IPtOO7VPFGefLNjuGwR55zjmAudvlGnqz0S+w5gmtEA1oseN7Bqe5B3tSp+H1wtw9PvLPvzinkINTez/Fatm04KEh6ITRn32/FdYnmK8HrOm3FSyx5n9PtL6i1HPMQbpXacl9p1P40K5J1sGv9GmsmoLXnyZGXfzGtq3EOoq9BgHttheAKj4cm860gY+cd8lDW36Tp7zRaJVcXR7a0GyXl2YdpOK8yPdPxDrnN9Rjat/fkX7ZK82WmBTWuv2SJF8moX0HGjdLFNa6/5r2tgpZWjtn7faBYyKmWsrFHDtNUsu91QBitv1Q6gTT8iUE4HHhY1NgAAAABJRU5ErkJggg=="
-              xlink:href="null">
-          </svg>
-        </a>
-
-        <a href="https://www.instagram.com/tourgolondon/" target="_blank">
-          <svg xmlns="http://www.w3.org/2000/svg"
-            width="40" height="38" viewbox="0 0 20 19">
-            <g id="twt_icon" transform="translate(-0.194)">
-              <g class="circle" data-name="Ellipse 74" transform="translate(0.194)" fill="none" stroke="#000"
-                stroke-width="1">
-                <ellipse cx="10" cy="9.5" rx="10" ry="9.5" stroke="none" />
-                <ellipse cx="10" cy="9.5" rx="9.5" ry="9" fill="none" />
-              </g>
-              <g id="instagram" transform="translate(4.671 4.384)">
-                <path id="Path_992" data-name="Path 992"
-                  d="M10.8,3.051a3.791,3.791,0,0,0-.241-1.259A2.658,2.658,0,0,0,9.037.274,3.8,3.8,0,0,0,7.779.032C7.223.006,7.047,0,5.638,0S4.053.006,3.5.03A3.792,3.792,0,0,0,2.241.272a2.532,2.532,0,0,0-.92.6,2.555,2.555,0,0,0-.6.918A3.8,3.8,0,0,0,.482,3.048C.455,3.6.449,3.78.449,5.189S.455,6.774.48,7.327A3.791,3.791,0,0,0,.721,8.586,2.657,2.657,0,0,0,2.239,10.1a3.8,3.8,0,0,0,1.259.241c.553.024.73.03,2.138.03s1.585-.006,2.138-.03A3.79,3.79,0,0,0,9.033,10.1a2.654,2.654,0,0,0,1.518-1.518,3.8,3.8,0,0,0,.241-1.259c.024-.553.03-.73.03-2.138S10.821,3.6,10.8,3.051ZM9.862,7.287a2.844,2.844,0,0,1-.178.963,1.721,1.721,0,0,1-.985.985,2.854,2.854,0,0,1-.963.178c-.547.024-.711.03-2.1.03s-1.551-.006-2.1-.03a2.842,2.842,0,0,1-.963-.178,1.6,1.6,0,0,1-.6-.387,1.613,1.613,0,0,1-.387-.6,2.854,2.854,0,0,1-.178-.963c-.024-.547-.03-.711-.03-2.1s.006-1.551.03-2.1A2.842,2.842,0,0,1,1.6,2.134a1.577,1.577,0,0,1,.389-.6,1.611,1.611,0,0,1,.6-.387A2.856,2.856,0,0,1,3.546.973c.547-.024.711-.03,2.1-.03s1.551.006,2.1.03a2.844,2.844,0,0,1,.963.178,1.6,1.6,0,0,1,.6.387,1.613,1.613,0,0,1,.387.6,2.856,2.856,0,0,1,.178.963c.024.547.03.711.03,2.1S9.887,6.739,9.862,7.287Zm0,0"
-                  transform="translate(-0.449 0)" />
-                <path id="Path_993" data-name="Path 993"
-                  d="M127.615,124.5a2.665,2.665,0,1,0,2.665,2.665A2.666,2.666,0,0,0,127.615,124.5Zm0,4.394a1.729,1.729,0,1,1,1.729-1.729A1.729,1.729,0,0,1,127.615,128.894Zm0,0"
-                  transform="translate(-122.426 -121.976)" />
-                <path id="Path_994" data-name="Path 994"
-                  d="M363.694,89.224a.622.622,0,1,1-.622-.622A.622.622,0,0,1,363.694,89.224Zm0,0"
-                  transform="translate(-355.112 -86.806)" />
-              </g>
-            </g>
-            <!--FALLBACK for email clients not able to handle svg-->
-            <image src="" xlink:href="null">
-          </svg>
-        </a>
-      </div>
-
-    </div>
-  </footer>
 </body>
 
 </html>

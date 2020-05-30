@@ -2,7 +2,7 @@
 <html lang="en">
 
 <head>
-  <meta charset="UTF-8">
+  <meta http-equiv="Content-Type" content="text/html charset=UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>TOURGO Email</title>
 
@@ -159,7 +159,7 @@
       width: 100%;
       height: 100%;
       background-color: white;
-      display: flex;
+      display: -webkit-box; display: -webkit-flex; display: -ms-flexbox; display: flex;
       flex-flow: column nowrap;
       justify-content: flex-start;
       align-items: center;
@@ -202,7 +202,6 @@
     p {
       letter-spacing: .05em;
       font-weight: 200;
-      margin: 2em 0;
       line-height: 1.5;
     }
 
@@ -222,7 +221,7 @@
       width: 100%;
       padding: 1em;
       overflow: hidden;
-      display: flex;
+      display: -webkit-box; display: -webkit-flex; display: -ms-flexbox; display: flex;
       flex-flow: row nowrap;
       justify-content: center;
       align-items: center;
@@ -256,14 +255,14 @@
     }
 
     header .content {
-      display: flex;
+      display: -webkit-box; display: -webkit-flex; display: -ms-flexbox; display: flex;
       flex-flow: row;
     }
 
     header .content>div {
       flex-grow: 1;
       width: 50%;
-      display: flex;
+      display: -webkit-box; display: -webkit-flex; display: -ms-flexbox; display: flex;
       flex-flow: column;
     }
 
@@ -309,13 +308,13 @@
     }
 
     .tableText {
-      display: flex;
+      display: -webkit-box; display: -webkit-flex; display: -ms-flexbox; display: flex;
       flex-flow: row;
     }
 
     .btnContainer {
       margin: 2em 0;
-      display: flex;
+      display: -webkit-box; display: -webkit-flex; display: -ms-flexbox; display: flex;
       flex-flow: column;
       justify-content: center;
       align-items: center;
@@ -370,7 +369,7 @@
 
     footer .signature {
       margin: 1em 0;
-      display: flex;
+      display: -webkit-box; display: -webkit-flex; display: -ms-flexbox; display: flex;
       flex-flow: column;
     }
 
@@ -421,7 +420,8 @@
       header h2 {
         font-size: 1.1em;
       }
-      header h1{
+
+      header h1 {
         font-size: 2em;
       }
     }
@@ -433,7 +433,7 @@
     <div class="content">
       <div class="left">
         <svg class="MainLOGO" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
-          width="552.987" height="128.612" viewBox="0 0 552.987 128.612">
+          width="552.987" height="128.612" viewbox="0 0 552.987 128.612">
           <defs>
             <linearGradient id="linear-gradient" y1="0.5" x2="1" y2="0.5" gradientUnits="objectBoundingBox">
               <stop offset="0" stop-color="#ff512f" />
@@ -542,14 +542,17 @@
                 transform="translate(-1224.731 -442.64)" fill="#fff" />
             </g>
           </g>
+
+          <!--FALLBACK for email clients not able to handle svg-->
+          <image src="" xlink:href="null">
         </svg>
 
-        <h2>A Big Hello And</h2>
-        <h1>Welcome!</h1>
+        <h2 style="margin:0; mso-line-height-rule:exactly;">A Big Hello And</h2>
+        <h1 style="margin:0; mso-line-height-rule:exactly;">Welcome!</h1>
       </div>
       <div class="right">
         <svg class="illustration" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
-          width="148.071" height="126.554" viewBox="0 0 148.071 126.554">
+          width="148.071" height="126.554" viewbox="0 0 148.071 126.554">
           <defs>
             <linearGradient id="linear-gradient" x1="1" y1="0.5" x2="0" y2="0.5" gradientUnits="objectBoundingBox">
               <stop offset="0" stop-color="#ff512f" />
@@ -717,6 +720,9 @@
                 transform="translate(24.579 3.403)" fill="#3f3d56" />
             </g>
           </g>
+
+          <!--FALLBACK for email clients not able to handle svg-->
+          <image src="" xlink:href="null">
         </svg>
       </div>
     </div>
@@ -724,7 +730,7 @@
   </header>
   <section>
 
-    <p>
+    <p style="margin:2em 0;">
       We’re so happy you are one of the first <b>TOURGOers</b> to join us on this journey! With you on our side, we’ll
       revolutionise the way we see, explore and experience our cities - starting with the UK’s capital, <b>London</b>!
       💪😎
@@ -732,20 +738,20 @@
 
     <div class="tableText">
       <div>
-        <p>
+        <p style="margin:2em 0;">
           Our goal is to make TOURGO your new favourite app and shape it exactly how you would like it to be. To do so,
           we will
           need
           a little of your help…
         </p>
 
-        <p>
+        <p style="margin:2em 0;">
           Make the difference <b>as a founding member</b> and take our short survey (2.13 minutes on average!). ✅
         </p>
       </div>
 
       <svg class="LondonInfo" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
-        width="153.69" height="153.69" viewBox="0 0 153.69 153.69">
+        width="153.69" height="153.69" viewbox="0 0 153.69 153.69">
         <defs>
           <linearGradient id="linear-gradientBox" x1="0.5" x2="1" y2="1" gradientUnits="objectBoundingBox">
             <stop offset="0" stop-color="#00609b" />
@@ -794,6 +800,9 @@ Challenges" transform="translate(648.314 1711.067)" fill="#fff" font-size="8" fo
           <path id="orangeBg-3" data-name="orangeBg" d="M7,0,19.747.09l-19.8,18.1L0,7A7,7,0,0,1,7,0Z"
             transform="translate(735.38 1779.691)" fill="url(#linear-gradientBox)" />
         </g>
+        
+        <!--FALLBACK for email clients not able to handle svg-->
+        <image src="" xlink:href="null">
       </svg>
     </div>
 
@@ -801,24 +810,26 @@ Challenges" transform="translate(648.314 1711.067)" fill="#fff" font-size="8" fo
       <a class="button" href="">Take The Survey</a>
     </div>
 
-    <p>
+    <p style="margin:2em 0;">
       You will not only contribute in shaping the app, but you will also <b>gain your first TOURGO points</b> and the
       chance to
       <b>win 1 of 5 JUST EAT gift cards worth £20</b> 🎯🎁<a class="tandc" href=""><i> ( Read terms and conditions )
         </i></a>!
     </p>
 
-    <p>
+    <p style="margin:2em 0;">
       The launch of TOURGO, and our competition, are still pending an official date. But don’t worry, <b>we’ll
         notify you</b> via email or social media when the time is fast approaching.
-      In the meantime, follow and engage with us on <a href="https://www.instagram.com/tourgolondon/" target="_blank"><i>Instagram</i></a> and <a href="https://www.facebook.com/Tourgo-APP-108726170790774/" target="_blank"><i>Facebook</i></a>!
+      In the meantime, follow and engage with us on <a href="https://www.instagram.com/tourgolondon/"
+        target="_blank"><i>Instagram</i></a> and <a href="https://www.facebook.com/Tourgo-APP-108726170790774/"
+        target="_blank"><i>Facebook</i></a>!
     </p>
 
-    <p>
+    <p style="margin:2em 0;">
       We wish you all the best with your future adventures.
     </p>
 
-    <p>
+    <p style="margin:2em 0;">
       Thank you very much for joining us,
     </p>
 
@@ -830,8 +841,9 @@ Challenges" transform="translate(648.314 1711.067)" fill="#fff" font-size="8" fo
       <a href="mailto:company@tourgoapp.com">company@tourgoapp.com</a>
       <a href="http://tourgoapp.com" target="_blank">tourgoapp.com</a>
       <div>
-        <a href="https://www.facebook.com/Tourgo-APP-108726170790774/" target="_blank"><svg id="fb_icon" xmlns="http://www.w3.org/2000/svg" width="40" height="40"
-            viewBox="0 0 19 19">
+        <a href="https://www.facebook.com/Tourgo-APP-108726170790774/" target="_blank">
+          <svg id="fb_icon"
+            xmlns="http://www.w3.org/2000/svg" width="40" height="40" viewbox="0 0 19 19">
             <g class="circle" data-name="Ellipse 74" fill="none" stroke="#000" stroke-width="1">
               <circle cx="9.5" cy="9.5" r="9.5" stroke="none" />
               <circle cx="9.5" cy="9.5" r="9" fill="none" />
@@ -841,9 +853,16 @@ Challenges" transform="translate(648.314 1711.067)" fill="#fff" font-size="8" fo
                 d="M27.733,0l-1.41,0a2.476,2.476,0,0,0-2.607,2.675V3.909H22.3a.222.222,0,0,0-.222.222V5.918a.222.222,0,0,0,.222.222h1.417v4.51a.222.222,0,0,0,.222.222h1.849a.222.222,0,0,0,.222-.222V6.139h1.657a.222.222,0,0,0,.222-.222V4.13a.222.222,0,0,0-.222-.222H26.009V2.863c0-.5.12-.758.774-.758h.95a.222.222,0,0,0,.222-.222V.224A.222.222,0,0,0,27.733,0Z"
                 transform="translate(-22.077)" />
             </g>
-          </svg></a>
+            <!--FALLBACK for email clients not able to handle svg-->
+            <image
+              src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABMAAAATCAYAAAByUDbMAAAAAXNSR0IArs4c6QAAAX1JREFUOBGdkztKQ0EUhm9ERaySFWgtFj4qu2gjqCi6A7EK2LgHQQRBBEFX4QMUrKJibbRwAe4gNuIb/T7JhbmTmxv0hy8z5zGTmTn3lJLOWic0CWPQhArcQQP2oU09bZ4kWcT3AcNwDasw0xpvGIfgDeahUDtET6G3MCtJ+omfwVaYF57Mjb5gCT7DpJz5O74F6IPtOO7VPFGefLNjuGwR55zjmAudvlGnqz0S+w5gmtEA1oseN7Bqe5B3tSp+H1wtw9PvLPvzinkINTez/Fatm04KEh6ITRn32/FdYnmK8HrOm3FSyx5n9PtL6i1HPMQbpXacl9p1P40K5J1sGv9GmsmoLXnyZGXfzGtq3EOoq9BgHttheAKj4cm860gY+cd8lDW36Tp7zRaJVcXR7a0GyXl2YdpOK8yPdPxDrnN9Rjat/fkX7ZK82WmBTWuv2SJF8moX0HGjdLFNa6/5r2tgpZWjtn7faBYyKmWsrFHDtNUsu91QBitv1Q6gTT8iUE4HHhY1NgAAAABJRU5ErkJggg=="
+              xlink:href="null">
+          </svg>
+        </a>
 
-        <a href="https://www.instagram.com/tourgolondon/" target="_blank"><svg xmlns="http://www.w3.org/2000/svg" width="40" height="38" viewBox="0 0 20 19">
+        <a href="https://www.instagram.com/tourgolondon/" target="_blank">
+          <svg xmlns="http://www.w3.org/2000/svg"
+            width="40" height="38" viewbox="0 0 20 19">
             <g id="twt_icon" transform="translate(-0.194)">
               <g class="circle" data-name="Ellipse 74" transform="translate(0.194)" fill="none" stroke="#000"
                 stroke-width="1">
@@ -862,7 +881,10 @@ Challenges" transform="translate(648.314 1711.067)" fill="#fff" font-size="8" fo
                   transform="translate(-355.112 -86.806)" />
               </g>
             </g>
-          </svg></a>
+            <!--FALLBACK for email clients not able to handle svg-->
+            <image src="" xlink:href="null">
+          </svg>
+        </a>
       </div>
 
     </div>

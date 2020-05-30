@@ -81,6 +81,9 @@ body {
 	background-color: #FF512F ;
 	color: white;
 }
+img::-moz-selection{
+	background-color: none !important;
+}
 img::selection{
 	background-color: none !important;
 }
